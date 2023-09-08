@@ -38,7 +38,11 @@ const Navbar = () => {
         justifyContent="space-between"
       >
         <Link as={NextLink} href="/">
-          <Image src="/airbnblogo.png" h={{base:'auto', md:'60px'}} w={{base:'auto', md:'100px'}} />
+          <Image
+            src="/airbnblogo.png"
+            h={{ base: "auto", md: "60px" }}
+            w={{ base: "auto", md: "100px" }}
+          />
         </Link>
         <Box className="flex items-center border-2 rounded-full">
           <Input rounded="full" w="auto" placeholder="Start your search" />
