@@ -12,6 +12,8 @@ import Places from "@/components/places/components/LiveAnywhere";
 import Explore from "@/components/explore/components/Explore";
 import LiveAnywhere from "@/components/places/components/LiveAnywhere";
 import FooterImage from "@/components/hero/components/FooterImage";
+import CalenderCard from "@/components/calender/components/CalenderCard";
+import { CalenderProvider } from "@/context/CalenderContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,12 +31,15 @@ export default function Home() {
   }
 
   return (
-    <Layout>
-      <HeroImage />
-      <Explore />
-      <LiveAnywhere />
-      <FooterImage />
-    </Layout>
+    <CalenderProvider>
+      <Layout>
+        <CalenderCard />
+        <HeroImage />
+        <Explore />
+        <LiveAnywhere />
+        <FooterImage />
+      </Layout>
+    </CalenderProvider>
   );
 }
 

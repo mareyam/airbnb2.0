@@ -21,9 +21,16 @@ import {
 import { DragHandleIcon, Search2Icon, SearchIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import { BsGlobe } from "react-icons/bs";
+import { useCalender } from "@/context/CalenderContext";
 
 const Navbar = () => {
   const [toggleHam, setToggleHam] = useState(false);
+  const { inputData, setInputData } = useCalender();
+
+  const handleInputChange = (e) => {
+    setInputData(e.target.value);
+  };
+
   return (
     <Container
       bg="gray.100"
@@ -44,12 +51,18 @@ const Navbar = () => {
             w={{ base: "auto", md: "100px" }}
           />
         </Link>
-        <Box className="flex items-center border-2 rounded-full">
-          <Input rounded="full" w="auto" placeholder="Start your search" />
+        <Box
+          className="flex items-center border-2 rounded-full"
+          w={{ base: "auto", md: "500px" }}
+        >
+          <Input
+            rounded="full"
+            placeholder="Start your search"
+            onChange={handleInputChange}
+          />
           <IconButton
             className="hidden md:inline-flex bg-red-400 text-white p-2"
             transition="all 0.3s ease-out"
-            w="auto"
             transform={toggleHam ? "rotate(0deg)" : "rotate(90deg)"}
             fontSize={{ base: "8px", md: "20px" }}
             rounded="full"

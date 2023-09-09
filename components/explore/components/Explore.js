@@ -40,8 +40,10 @@ const Explore = () => {
         {data?.map((item) => (
           <HStack>
             <Image borderRadius="10%" src={item.image} h="100px" w="100px" />
-            <VStack>
-              <Text fontSize="12px">{item.title}</Text>
+            <VStack textAlign="left" align="left">
+              <Text fontWeight="700" fontSize="12px">
+                {item.title}
+              </Text>
               <Text color="gray.600" fontSize="12px">
                 {item.location}
               </Text>
