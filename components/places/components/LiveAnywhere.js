@@ -34,9 +34,11 @@ const LiveAnywhere = () => {
       </Heading>
       <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="1">
         {data?.slice(0, 4).map((item) => (
-          <VStack textAlign="left" align="left" >
+          <VStack textAlign="left" align="left">
             <Image borderRadius="5%" src={item.image} h="300px" w="300px" />
-            <Text fontWeight='600' fontSize="20px">{item.title}</Text>
+            <Text fontWeight="600" fontSize="20px">
+              {item.title}
+            </Text>
           </VStack>
         ))}
       </SimpleGrid>

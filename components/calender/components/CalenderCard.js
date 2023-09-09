@@ -49,17 +49,17 @@ const CalenderCard = () => {
   };
 
   return (
-    <Box border="2px solid">
+    <Box>
       <Center justifyContent="center" flexDirection="column" w="100%">
         {inputData && (
-          <Box className="flex flex-col col-span-3" border="2px solid red">
+          <Box className="m-3 flex flex-col col-span-3">
             <DateRangePicker
               ranges={[selectionRange]}
               minDate={new Date()}
               rangeColors={["#FD586I"]}
               onChange={handleSelect}
             />
-            <HStack border="2px solid" w="auto" justifyContent="space-between">
+            <HStack w="auto" justifyContent="space-between">
               <Text fontWeight="600" fontSize="18px">
                 Number of guests
               </Text>
@@ -70,13 +70,20 @@ const CalenderCard = () => {
                   icon={
                     <Box>
                       <Image
-                        src="/user-removebg-preview.png"
+                        src={
+                          guestCount === 1
+                            ? "/user-removebg-preview.png"
+                            : guestCount === 2
+                            ? "/people-removebg-preview.png"
+                            : "/group-removebg-preview.png"
+                        }
                         h="20px"
                         w="20px"
                       />
                     </Box>
                   }
                 ></IconButton>
+
                 <NumberInput
                   w="75px"
                   onChange={handleGuestCount}
@@ -95,7 +102,7 @@ const CalenderCard = () => {
               </HStack>
             </HStack>
 
-            <HStack border="2px solid" justifyContent="space-between">
+            <HStack justifyContent="space-between" mt='2'>
               <Button rounded="full" bg="gray.100" onClick={handleReset}>
                 Reset
               </Button>

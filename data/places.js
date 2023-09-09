@@ -1,5 +1,7 @@
 export const places = [
   {
+    city: "Paulo",
+    country: "Brazil",
     id: 1,
     title: "Cozy Apartment",
     description:
@@ -7,12 +9,16 @@ export const places = [
     location: "Downtown, Cityname",
     price_per_night: 150,
     number_of_bedrooms: 2,
-    number_of_bathrooms: 1.5,
+    number_of_bathrooms: 2,
     max_guests: 4,
     amenities: ["Wi-Fi", "Kitchen", "TV", "Washer/Dryer", "Free Parking"],
-    image: "/img1.png",
+    image: "/luxury.jpg",
+    host: "Camelia,",
+    career: "Trainer",
   },
   {
+    city: "Toronto",
+    country: "Canada",
     id: 2,
     title: "Seaside Villa",
     description:
@@ -29,9 +35,12 @@ export const places = [
       "Hot Tub",
       "BBQ Grill",
     ],
-    image: "/img2.png",
+    image: "/villa.jpg",
+    host: "Robert",
   },
   {
+    city: "Torino",
+    country: "Italy",
     id: 3,
     title: "Rustic Cabin",
     description:
@@ -48,9 +57,13 @@ export const places = [
       "Outdoor Seating",
       "No Wi-Fi",
     ],
-    image: "/img1.png",
+    image: "/cabin.jpg",
+    host: "Kelvin",
+    career: "Host",
   },
   {
+    city: "Lyon",
+    country: "France",
     id: 1,
     title: "Cozy Apartment",
     description:
@@ -61,9 +74,13 @@ export const places = [
     number_of_bathrooms: 1.5,
     max_guests: 4,
     amenities: ["Wi-Fi", "Kitchen", "TV", "Washer/Dryer", "Free Parking"],
-    image: "/img1.png",
+    image: "/cabin.jpg",
+    host: "Albert",
+    career: "Entreprenuer",
   },
   {
+    city: "Milan",
+    country: "Italy",
     id: 2,
     title: "Seaside Villa",
     description:
@@ -80,9 +97,13 @@ export const places = [
       "Hot Tub",
       "BBQ Grill",
     ],
-    image: "/img2.png",
+    image: "/castle.jpg",
+    host: "Rock",
+    career: "Coach trainer",
   },
   {
+    city: "Lindfield",
+    country: "UK",
     id: 3,
     title: "Rustic Cabin",
     description:
@@ -99,6 +120,8 @@ export const places = [
       "Outdoor Seating",
       "No Wi-Fi",
     ],
-    image: "/img1.png",
+    image: "/cabin.jpg",
+    host: "Kris",
+    career: "Food Artist",
   },
 ];

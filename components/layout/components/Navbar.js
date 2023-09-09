@@ -140,7 +140,11 @@ const Navbar = () => {
                     backgroundColor="gray.100"
                     icon={
                       <Box>
-                        <Image src={"/user.png"} h="18px" w="18px" />
+                        <Image
+                          src={"/user-removebg-preview.png"}
+                          h="18px"
+                          w="18px"
+                        />
                       </Box>
                     }
                   ></IconButton>
