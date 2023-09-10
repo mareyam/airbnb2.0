@@ -38,11 +38,11 @@ const CustomTabPanel = ({ start, end }) => {
   return (
     <TabPanel>
       <Box>
-        <SimpleGrid columns={{ base: "3", md: 6 }}>
+        <SimpleGrid columns={{ base: 2, md: 6 }}>
           {data?.slice(start, start + itemsToShow).map((item) => (
             <VStack spacing="0" mt="5" align="left">
-              <Text fontWeight="700">{item.name}</Text>
-              <Text>{item.type}</Text>
+              <Text fontSize={{base:'15px', md:'15px'}}fontWeight="700">{item.name}</Text>
+              <Text fontSize={{base:'12px', md:'14px'}}>{item.type}</Text>
             </VStack>
           ))}
           <Box
@@ -63,4 +63,3 @@ const CustomTabPanel = ({ start, end }) => {
 };
 
 export default CustomTabPanel;
-

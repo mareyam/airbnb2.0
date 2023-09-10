@@ -5,7 +5,7 @@ import { Box } from "@chakra-ui/react";
 
 const Layout = ({ children }) => {
   return (
-    <Box minW="container.xl">
+    <Box minW="container.2xl">
       <Navbar />
       {children}
       <Footer />

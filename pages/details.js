@@ -6,6 +6,9 @@ import DetailsHeader from "@/components/details/DetailsHeader";
 import DetailsInformation from "@/components/details/DetailsInformation";
 import Layout from "@/components/layout/Layout";
 import { CalenderProvider } from "@/context/CalenderContext";
+import Offers from "@/components/details/Offers";
+import BookingCalender from "@/components/details/BookingCalender";
+import Reviews from "@/components/reviews/Reviews";
 
 const details = () => {
   return (
@@ -15,6 +18,9 @@ const details = () => {
           <DetailsHeader />
           <DetailsImages />
           <DetailsInformation />
+          <Offers />
+          <BookingCalender />
+          <Reviews />
         </Container>
       </Layout>
     </CalenderProvider>

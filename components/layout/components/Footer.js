@@ -25,11 +25,11 @@ const Footer = () => {
       position="sticky"
       top="0"
       zIndex="105"
-      paddingLeft="10"
-      paddingTop="10"
-      marginTop='5'
+      paddingLeft={{ base: "4", md: "10" }}
+      paddingTop={{ base: "4", md: "10" }}
+      marginTop="5"
     >
-      <Heading fontSize="28px" fontWeight="600">
+      <Heading fontSize={{ base: "20px", md: "28px" }} fontWeight="600">
         Inspiration for future getaways
       </Heading>
       <Tabs paddingTop="3">
@@ -63,31 +63,47 @@ const Footer = () => {
       <SimpleGrid pb="20" ml="4" mt="5" columns={{ base: 2, md: 3 }}>
         <VStack spacing="3" align="left">
           <Text fontWeight="600">Support</Text>
-          <Text>Help Center</Text>
-          <Text>AirCover</Text>
-          <Text>Anti-discrimination</Text>
-          <Text>Disability support</Text>
-          <Text>Cancellation options</Text>
-          <Text>Report neighborhood concern</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>Help Center</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>AirCover</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>
+            Anti-discrimination
+          </Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>
+            Disability support
+          </Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>
+            Cancellation options
+          </Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>
+            Report neighborhood concern
+          </Text>
         </VStack>
         <VStack spacing="3" align="left">
           <Text fontWeight="600">Hosting</Text>
-          <Text>Airbnb your home</Text>
-          <Text>AirCover for Hosts</Text>
-          <Text>Hosting resources</Text>
-          <Text>Community forum</Text>
-          <Text>Hosting responsibly</Text>
-          <Text>Airbnb-friendly apartments</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>Airbnb your home</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>
+            AirCover for Hosts
+          </Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>Hosting resources</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>Community forum</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>
+            Hosting responsibly
+          </Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>
+            Airbnb-friendly apartments
+          </Text>
         </VStack>
 
-        <VStack spacing="3" align="left">
+        <VStack spacing="3" align="left" marginTop={{base:'4', md:'0'}}>
           <Text fontWeight="600">Airbnb</Text>
-          <Text>Newsroom</Text>
-          <Text>New features</Text>
-          <Text>Careers</Text>
-          <Text>Investors</Text>
-          <Text>Gift cards</Text>
-          <Text>Airbnb.org emergency stays</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>Newsroom</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>New features</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>Careers</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>Investors</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>Gift cards</Text>
+          <Text fontSize={{ base: "12px", md: "15px" }}>
+            Airbnb.org emergency stays
+          </Text>
         </VStack>
       </SimpleGrid>
     </Container>

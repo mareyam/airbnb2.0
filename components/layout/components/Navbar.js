@@ -46,9 +46,10 @@ const Navbar = () => {
       >
         <Link as={NextLink} href="/">
           <Image
-            src="/airbnblogo.png"
-            h={{ base: "auto", md: "60px" }}
-            w={{ base: "auto", md: "100px" }}
+            // src="/airbnblogo.png"
+            src={{ base: "/smallairbnb.png", md: "/airbnblogo.png" }}
+            h={{ base: "auto", md: "50px", lg: "60px" }}
+            w={{ base: "auto", md: "130px", lg: "100px" }}
           />
         </Link>
         <Box
@@ -190,3 +191,13 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+{/* <Image
+src="/smallairbnb.png" // Default image source
+srcSet="/smallairbnb.png 320w, /airbnblogo.png 1280w" // Different sources for different screen widths
+sizes="(max-width: 320px) 280px, (max-width: 1280px) 1200px, 1600px" // Define image sizes for different screen widths
+alt="Airbnb Logo"
+h={{ base: "auto", md: "50px", lg: "60px" }}
+w={{ base: "auto", md: "130px", lg: "100px" }}
+/> */}

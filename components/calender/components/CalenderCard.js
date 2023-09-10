@@ -49,7 +49,7 @@ const CalenderCard = () => {
   };
 
   return (
-    <Box>
+    <Box w={{ base: "50%", md: "100%" }}>
       <Center justifyContent="center" flexDirection="column" w="100%">
         {inputData && (
           <Box className="m-3 flex flex-col col-span-3">
@@ -102,7 +102,7 @@ const CalenderCard = () => {
               </HStack>
             </HStack>
 
-            <HStack justifyContent="space-between" mt='2'>
+            <HStack justifyContent="space-between" mt="2">
               <Button rounded="full" bg="gray.100" onClick={handleReset}>
                 Reset
               </Button>
