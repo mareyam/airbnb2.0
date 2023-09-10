@@ -85,7 +85,7 @@ const SwiperCarousel = () => {
                 ></IconButton> */}
 
               <IconButton
-                border="1px solid"
+              
                 isRound={true}
                 w="auto"
                 bottom="5"
