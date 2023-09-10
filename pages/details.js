@@ -1,17 +1,23 @@
-import { Box, Container, HStack, Heading } from "@chakra-ui/react";
 import React from "react";
+import { Container } from "@chakra-ui/react";
+
+import DetailsImages from "@/components/details/DetailsImages";
+import DetailsHeader from "@/components/details/DetailsHeader";
+import DetailsInformation from "@/components/details/DetailsInformation";
+import Layout from "@/components/layout/Layout";
+import { CalenderProvider } from "@/context/CalenderContext";
 
 const details = () => {
   return (
-    <Container minW="container.2xl">
-      <Heading>Aura House 2bds Eco Bamboo House, Pool, River View</Heading>
-      <HStack>
-        <Text>4.84</Text>
-        <Text>· 238 reviews </Text>
-        <Text>· Superhost </Text>
-        <Text>· Abiansemal, Bali, Indonesia </Text>
-      </HStack>
-    </Container>
+    <CalenderProvider>
+      <Layout>
+        <Container maxW="container.xl">
+          <DetailsHeader />
+          <DetailsImages />
+          <DetailsInformation />
+        </Container>
+      </Layout>
+    </CalenderProvider>
   );
 };
 
