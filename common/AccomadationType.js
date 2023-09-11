@@ -3,7 +3,23 @@ import { Image, HStack, Box, VStack } from "@chakra-ui/react";
 
 const AccomadationType = () => {
   return (
-    <HStack m="5" spacing="10" w="100%" overflowX="auto">
+    <HStack
+      m="5"
+      spacing="10"
+      w="100%"
+      overflowX="auto"
+      css={{
+        "&::-webkit-scrollbar": {
+          width: "4px",
+        },
+        "&::-webkit-scrollbar-track": {
+          width: "6px",
+        },
+        "&::-webkit-scrollbar-thumb": {
+          borderRadius: "24px",
+        },
+      }}
+    >
       {list.map((item) => (
         <VStack>
           <Image src={item.image} h="25px" w="25px" />

@@ -26,20 +26,30 @@ const Places = () => {
       <VStack align="left">
         {/* <ChakraTabs /> */}
         <HStack w="100%" position="sticky" top="0">
-          <AccomadationType />
-          <Filters />
+          <Box w={{ base: "50%", md: "85%" }} overflow="hidden">
+            <AccomadationType />
+          </Box>
+          <Box w={{ base: "50%", md: "15%" }}>
+            <Filters />
+          </Box>
         </HStack>
 
         <VStack>
-          <Center w="50%" border="1px solid gray">
-            <HStack w="100%" p="3" spacing="15">
-              <Text w="100%">Display total price | </Text>
-              <Text w="150%" color="gray.300">
-                Includes all fees, before taxes
-              </Text>
-              <FormControl w="100%" display="flexs" alignItems="center">
-                <Switch id="email-alerts" />
-              </FormControl>
+          <Center w="50%" border="1px solid #CBD5E0" p="5" borderRadius="10px">
+            <HStack w="100%" spacing="15" justifyContent="space-between">
+              <Box display="flex">
+                <Text fontWeight="600">Display total price | </Text>
+                <Text color="gray.500" pl='2'> Includes all fees, before taxes</Text>
+              </Box>
+              <Box>
+                <FormControl
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="end"
+                >
+                  <Switch id="email-alerts" size="lg" />
+                </FormControl>
+              </Box>
             </HStack>
           </Center>
         </VStack>
@@ -53,9 +63,9 @@ export default Places;
 
 {
   /* <VStack>
-<Center w="50%" border="2px solid" justifyContent="space-between">
+<Center w="50%" justifyContent="space-between">
   <HStack
-    border="2px solid"
+  
     w="100%"
     p="3"
     justifyContent="space-between"

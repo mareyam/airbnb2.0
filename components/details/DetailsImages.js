@@ -1,11 +1,18 @@
 import { Box, Image } from "@chakra-ui/react";
 import React from "react";
-import { Gallery } from "react-grid-gallery";
+// import { Gallery } from "react-grid-gallery";
 
 const DetailsImages = () => {
+  {
+    !images ? <p>not found</p> : <p>found</p>
+  }
   return (
     <Box marginTop="4">
-      <Gallery images={images} />
+      {images?.map((item) => (
+        <Box>
+          <Image src={item.image} />
+        </Box>
+      ))}
     </Box>
   );
 };

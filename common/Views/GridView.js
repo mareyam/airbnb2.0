@@ -51,11 +51,11 @@ const GridView = () => {
                   Stay with {item.host} . {item.career}{" "}
                 </Text>
                 <Text color="gray.500">Sep 14-19</Text>
-                <Text>
+                <Text textDecoration='underline'>
                   <Box as="span" fontWeight="600">
-                    ${item.price_per_night}
+                    ${item.price_per_night} / 
                   </Box>
-                  night
+                   night
                 </Text>
               </Box>
               <Box display="flex">

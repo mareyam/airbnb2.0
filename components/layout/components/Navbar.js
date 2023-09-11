@@ -17,6 +17,7 @@ import {
   Divider,
   Flex,
   Link,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { DragHandleIcon, Search2Icon, SearchIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
@@ -24,6 +25,10 @@ import { BsGlobe } from "react-icons/bs";
 import { useCalender } from "@/context/CalenderContext";
 
 const Navbar = () => {
+  const src = useBreakpointValue({
+    base: "/smallairbnb.png",
+    md: "/airbnblogo.png",
+  });
   const [toggleHam, setToggleHam] = useState(false);
   const { inputData, setInputData } = useCalender();
 
@@ -33,11 +38,11 @@ const Navbar = () => {
 
   return (
     <Container
-      bg="gray.100"
       minW="100vw"
       position="sticky"
       top="0"
       zIndex="105"
+      borderBottom="1px solid #E2E8F0"
     >
       <Flex
         align="center"
@@ -47,13 +52,13 @@ const Navbar = () => {
         <Link as={NextLink} href="/">
           <Image
             // src="/airbnblogo.png"
-            src={{ base: "/smallairbnb.png", md: "/airbnblogo.png" }}
-            h={{ base: "auto", md: "50px", lg: "60px" }}
-            w={{ base: "auto", md: "130px", lg: "100px" }}
+            src={src}
+            h={{ base: "25px", md: "50px", lg: "60px" }}
+            w={{ base: "30px", md: "130px", lg: "100px" }}
           />
         </Link>
         <Box
-          className="flex items-center border-2 rounded-full"
+          className="flex items-center rounded-full"
           w={{ base: "auto", md: "500px" }}
         >
           <Input
@@ -95,15 +100,14 @@ const Navbar = () => {
             gap="3"
           >
             <Box display="flex">
-              <Box className="flex items-center border-2 rounded-full">
+              <Box className="flex items-center rounded-full">
                 <Button
-                  className="flex items-center border-2 rounded-full"
+                  className="flex items-center rounded-full"
                   borderRadius="full"
                   bg="gray.200"
                 >
                   Become a host
                 </Button>
-
                 <IconButton
                   className="hidden md:inline-flex bg-red-400 text-white p-2"
                   transition="all 0.3s ease-out"
@@ -116,11 +120,10 @@ const Navbar = () => {
                 ></IconButton>
               </Box>
 
-              <Box className="flex items-center border-2 rounded-full">
+              <Box className="flex items-center rounded-full">
                 <Button
-                  className="flex items-center border-2 rounded-full"
+                  className="flex items-center rounded-full"
                   borderRadius="full"
-                  bg="gray.200"
                   justifyContent="space-between"
                   flexDirection="row"
                   display="flex"
@@ -192,12 +195,13 @@ const Navbar = () => {
 
 export default Navbar;
 
-
-{/* <Image
+{
+  /* <Image
 src="/smallairbnb.png" // Default image source
 srcSet="/smallairbnb.png 320w, /airbnblogo.png 1280w" // Different sources for different screen widths
 sizes="(max-width: 320px) 280px, (max-width: 1280px) 1200px, 1600px" // Define image sizes for different screen widths
 alt="Airbnb Logo"
 h={{ base: "auto", md: "50px", lg: "60px" }}
 w={{ base: "auto", md: "130px", lg: "100px" }}
-/> */}
+/> */
+}
