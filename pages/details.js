@@ -9,6 +9,7 @@ import { CalenderProvider } from "@/context/CalenderContext";
 import Offers from "@/components/details/Offers";
 import BookingCalender from "@/components/details/BookingCalender";
 import Reviews from "@/components/reviews/Reviews";
+import CalenderCard from "@/components/calender/components/CalenderCard";
 
 const details = () => {
   return (
@@ -20,6 +21,8 @@ const details = () => {
           <DetailsInformation />
           <Offers />
           <BookingCalender />
+          <CalenderCard />
+
           <Reviews />
         </Container>
       </Layout>

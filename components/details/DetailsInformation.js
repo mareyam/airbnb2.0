@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Box,
@@ -15,11 +15,11 @@ import {
 import ReserveSmallCard from "../reserve/ReserveSmallCard";
 
 const DetailsInformation = () => {
-  const [show, setShow] = React.useState(false);
+  const [show, setShow] = useState(false);
 
   const handleToggle = () => setShow(!show);
   return (
-    <HStack columns={{ base: 1, md: 2 }} mt='3'>
+    <HStack columns={{ base: 1, md: 2 }} mt="3">
       <Box w={{ base: "100%", md: "60%" }}>
         <HStack w="100%" justify="space-between">
           <VStack mt="5" align="left">
@@ -70,7 +70,7 @@ const DetailsInformation = () => {
         </VStack>
         <Divider my="5" />
 
-        <Collapse startingHeight={20} isOpen={show}>
+        <Collapse startingHeight={20} in={show}>
           Aura house is a beautiful & unique eco bamboo house built on the west
           bank of the River Ayung facing east to catch sunrise. Aura House is
           situated 25min away from Ubud, and 35min away from Canggu. IF WE ARE
@@ -90,7 +90,7 @@ const DetailsInformation = () => {
       </Box>
       <Box w={{ base: "100%", md: "35%" }} marginLeft={{ base: 0, md: "15%" }}>
         <ReserveSmallCard />
-      </Box>      
+      </Box>
     </HStack>
   );
 };

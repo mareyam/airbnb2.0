@@ -7,6 +7,7 @@ import {
   Image,
   SimpleGrid,
   VStack,
+  Divider,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -14,17 +15,18 @@ const Offers = () => {
   return (
     <VStack align="left" w="50%">
       <Heading fontSize="25px">What this place offers</Heading>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing="5">
+      <SimpleGrid mt="5" columns={{ base: 1, md: 2 }} spacing="5">
         {offerList.map((item) => (
-          <HStack border="2px solid" w="auto">
-            <Image src={item.image} w="35px" h="35px" />
-            <Text fontSize="18px">{item.name}</Text>
+          <HStack w="auto">
+            <Image src={item.image} w="30px" h="30px" />
+            <Text fontSize="15px">{item.name}</Text>
           </HStack>
         ))}
       </SimpleGrid>
-      <Button w="30%" bgColor="white" border="1px solid">
+      <Button w="30%" bgColor="white" border="1px solid" p="5" mt="5">
         Show all 24 amenities
       </Button>
+      <Divider my="5" />
     </VStack>
   );
 };
@@ -33,43 +35,43 @@ export default Offers;
 
 const offerList = [
   {
-    image: "/img1.png",
+    image: "/cabin.jpg",
     name: "Mountain view",
   },
   {
-    image: "/img1.png",
+    image: "/calender.png",
     name: "Mountain view",
   },
   {
-    image: "/img1.png",
+    image: "/castle.png",
     name: "Mountain view",
   },
   {
-    image: "/img1.png",
+    image: "/cave.png",
     name: "Mountain view",
   },
   {
-    image: "/img1.png",
+    image: "/filter.png",
     name: "Mountain view",
   },
   {
-    image: "/img1.png",
+    image: "/home.png",
     name: "Mountain view",
   },
   {
-    image: "/img1.png",
+    image: "/hotel.png",
     name: "Mountain view",
   },
   {
-    image: "/img1.png",
+    image: "/house.png",
     name: "Mountain view",
   },
   {
-    image: "/img1.png",
+    image: "/iglu.jpg",
     name: "Mountain view",
   },
   {
-    image: "/img1.png",
+    image: "/sketch.png",
     name: "Mountain view",
   },
 ];

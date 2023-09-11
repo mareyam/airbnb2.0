@@ -24,8 +24,8 @@ const CustomTabPanel = ({ start, end }) => {
   const handleToggle = () => setShow(!show);
 
   const { data, isLoading, isError } = useFooter();
-  console.log("data in Places.js is");
-  console.log({ data });
+  // console.log("data in Places.js is");
+  // console.log({ data });
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -41,8 +41,10 @@ const CustomTabPanel = ({ start, end }) => {
         <SimpleGrid columns={{ base: 2, md: 6 }}>
           {data?.slice(start, start + itemsToShow).map((item) => (
             <VStack spacing="0" mt="5" align="left">
-              <Text fontSize={{base:'15px', md:'15px'}}fontWeight="700">{item.name}</Text>
-              <Text fontSize={{base:'12px', md:'14px'}}>{item.type}</Text>
+              <Text fontSize={{ base: "15px", md: "15px" }} fontWeight="700">
+                {item.name}
+              </Text>
+              <Text fontSize={{ base: "12px", md: "14px" }}>{item.type}</Text>
             </VStack>
           ))}
           <Box
