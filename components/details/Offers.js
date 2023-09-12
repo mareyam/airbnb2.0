@@ -13,8 +13,14 @@ import React from "react";
 
 const Offers = () => {
   return (
-    <VStack align="left" w="50%">
-      <Heading fontSize="25px">What this place offers</Heading>
+    <VStack align="left" w="100%">
+      <Heading
+        textAlign={{ base: "center", md: "left" }}
+        w="100%"
+        fontSize="25px"
+      >
+        What this place offers
+      </Heading>
       <SimpleGrid mt="5" columns={{ base: 1, md: 2 }} spacing="5">
         {offerList.map((item) => (
           <HStack w="auto">
@@ -23,7 +29,13 @@ const Offers = () => {
           </HStack>
         ))}
       </SimpleGrid>
-      <Button w="30%" bgColor="white" border="1px solid" p="5" mt="5">
+      <Button
+        w={{ base: "60%", md: "30%" }}
+        bgColor="white"
+        border="1px solid"
+        p="5"
+        mt="5"
+      >
         Show all 24 amenities
       </Button>
       <Divider my="5" />

@@ -29,17 +29,30 @@ const Places = () => {
           <Box w={{ base: "50%", md: "85%" }} overflow="hidden">
             <AccomadationType />
           </Box>
-          <Box w={{ base: "50%", md: "15%" }}>
+          <Box
+            h="100%"
+            w={{ base: "50%", md: "15%" }}
+            top="0"
+            position="sticky"
+          >
             <Filters />
           </Box>
         </HStack>
 
         <VStack>
-          <Center w="50%" border="1px solid #CBD5E0" p="5" borderRadius="10px">
+          <Center
+            w={{ base: "100%", md: "50%" }}
+            border="1px solid #CBD5E0"
+            p="5"
+            borderRadius="10px"
+          >
             <HStack w="100%" spacing="15" justifyContent="space-between">
-              <Box display="flex">
+              <Box display={{ base: "block", md: "flex" }}>
                 <Text fontWeight="600">Display total price | </Text>
-                <Text color="gray.500" pl='2'> Includes all fees, before taxes</Text>
+                <Text color="gray.500" pl={{base:"0", md:"2"}}>
+                  {" "}
+                  Includes all fees, before taxes
+                </Text>
               </Box>
               <Box>
                 <FormControl

@@ -23,7 +23,7 @@ const Reviews = () => {
             <VStack align="left" pb="5" pt="5">
               <HStack>
                 <Image rounded="full" src={item.image} w="50px" h="50px" />
-                <VStack spacing="0">
+                <VStack spacing="0" align="left">
                   <Text fontWeight="500">{item.name}</Text>
                   <Text>{item.date}</Text>
                 </VStack>
@@ -40,9 +40,16 @@ const Reviews = () => {
           </>
         ))}
       </SimpleGrid>
-      <VStack align='left' spacing='5'>
-        <Button bg='white' w='30%' textDecoration="underline">Show more </Button>
-        <Button bg="white" p="6" border="1px solid" w="30%">
+      <VStack align="left" spacing="5">
+        <Text textAlign="left" bg="white" w="30%" textDecoration="underline">
+          Show more
+        </Text>
+        <Button
+          w={{ base: "60%", md: "30%" }}
+          bg="white"
+          p="6"
+          border="1px solid"
+        >
           See all {reviewList.length} reviews
         </Button>
       </VStack>

@@ -32,12 +32,12 @@ const Navbar = () => {
 
   return (
     <Container
-      minW="100vw"
+      maxW="100vw"
       position="sticky"
       top="0"
       zIndex="1000"
       borderBottom="1px solid #E2E8F0"
-      px='10'
+      px="10"
     >
       <Flex
         align="center"
@@ -62,10 +62,15 @@ const Navbar = () => {
           >
             <Box display="flex">
               <Box className="flex items-center rounded-full">
-                <Text fontWeight='500' pr='5'>
+                <Text fontWeight="500" pr="5">
                   Ready to Airbnb it?
                 </Text>
-                <Button p='7' bgColor='red.300' color='white' className="flex items-center rounded-full">
+                <Button
+                  p="7"
+                  bgColor="red.300"
+                  color="white"
+                  className="flex items-center rounded-full"
+                >
                   Become a host
                 </Button>
               </Box>

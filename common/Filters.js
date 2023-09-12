@@ -4,7 +4,7 @@ import { Box, Text, IconButton, Image, Button, HStack } from "@chakra-ui/react";
 const Filters = () => {
   return (
     <HStack>
-      <Button margin="5" bg="white" p="5" border="1px solid gray">
+      <Button margin="5" bg="white" p="6" w="55%" border="1px solid gray">
         <IconButton
           bg="white"
           icon={

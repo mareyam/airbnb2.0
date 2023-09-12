@@ -13,21 +13,30 @@ import Map from "./Map";
 
 const Card = () => {
   return (
-    <Container maxW="container.xl" border="2px solid">
-      <Center h="100vh">
-        <SimpleGrid
-          columns={{ base: 1, md: 2 }}
-          justifyContent="space-between"
-          align="center"
-        >
-          <VStack border="2px solid" h="100vh" justifyContent="center">
-            <Heading fontSize='50px' color="red.300">Airbnb it.</Heading>
-            <Heading fontSize='40px' fontWeight='500'>You could earn</Heading>
-            <Heading fontSize='60px'>$217</Heading>
-            <Text fontSize="16px">7 nights at an estimated $31 a night</Text>
+    <Container maxW="container.xl">
+      <Center w="100%">
+        <SimpleGrid columns={{ base: 1, md: 2 }} w="100%">
+          <VStack textAlign="center" justifyContent="center">
+            <Heading
+              fontWeight="500"
+              fontSize={{ base: "40px", md: "50px" }}
+              color="red.300"
+            >
+              Airbnb it.
+            </Heading>
+            <Heading fontSize="40px" fontWeight="500">
+              You could earn
+            </Heading>
+            <Heading fontSize="60px">$217</Heading>
+            <Text fontSize="16px">
+              <Box as="span" textDecoration="underline" fontWeight="700">
+                7 nights
+              </Box>{" "}
+              at an estimated $31 a night
+            </Text>
             <Text>scroller</Text>
           </VStack>
-          <Box border="2px solid">
+          <Box>
             <Map />
           </Box>
         </SimpleGrid>

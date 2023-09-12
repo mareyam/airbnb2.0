@@ -9,11 +9,7 @@ const DetailsImages = () => {
 
   return (
     <Box marginTop="4">
-      <SimpleGrid
-        columns={{ base: 1, md: 2 }}
-        spacing={4}
-        border="2px solid red"
-      >
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
         <Box>
           <Image
             src={images[0].src}

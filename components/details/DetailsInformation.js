@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Box,
@@ -15,14 +15,33 @@ import {
 import ReserveSmallCard from "../reserve/ReserveSmallCard";
 
 const DetailsInformation = () => {
+  const [scrollTop, setScrollTop] = useState(0);
+  const fixedHeight = 100;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollTop(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const [show, setShow] = useState(false);
 
   const handleToggle = () => setShow(!show);
   return (
-    <HStack columns={{ base: 1, md: 2 }} mt="3">
+    <HStack
+      columns={{ base: 1, md: 2 }}
+      mt="3"
+      flexDirection={{ base: "column", md: "row" }}
+    >
       <Box w={{ base: "100%", md: "60%" }}>
         <HStack w="100%" justify="space-between">
-          <VStack mt="5" align="left">
+          <VStack align="left">
             <Heading fontWeight="500" fontSize="25px">
               Entire villa hosted by Wayan
             </Heading>
@@ -88,7 +107,14 @@ const DetailsInformation = () => {
         </Button>
         <Divider my="5" />
       </Box>
-      <Box w={{ base: "100%", md: "35%" }} marginLeft={{ base: 0, md: "15%" }}>
+      <Box
+        mt="3"
+        w={{ base: "100%", md: "35%" }}
+        marginLeft={{ base: 0, md: "15%" }}
+        position="sticky"
+        // height={`${fixedHeight}px`}
+        top={scrollTop > fixedHeight ? -fixedHeight : 0}
+      >
         <ReserveSmallCard />
       </Box>
     </HStack>

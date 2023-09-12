@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <Container
       bg="gray.100"
-      minW="100vw"
+      maxW="100vw"
       position="sticky"
       top="0"
       zIndex="105"
@@ -94,7 +94,7 @@ const Footer = () => {
           </Text>
         </VStack>
 
-        <VStack spacing="3" align="left" marginTop={{base:'4', md:'0'}}>
+        <VStack spacing="3" align="left" marginTop={{ base: "4", md: "0" }}>
           <Text fontWeight="600">Airbnb</Text>
           <Text fontSize={{ base: "12px", md: "15px" }}>Newsroom</Text>
           <Text fontSize={{ base: "12px", md: "15px" }}>New features</Text>

@@ -4,6 +4,7 @@ import { Container } from "@chakra-ui/react";
 import Navbar from "@/components/host/components/Navbar";
 import Card from "@/components/host/components/Card";
 import CardImage from "@/components/host/components/CardImage";
+import Footer from "@/components/layout/components/Footer";
 
 const host = () => {
   return (
@@ -11,6 +12,7 @@ const host = () => {
       <Navbar />
       <Card />
       <CardImage />
+      <Footer />
     </Container>
   );
 };
