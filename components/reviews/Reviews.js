@@ -6,6 +6,7 @@ import {
   SimpleGrid,
   Text,
   VStack,
+  Button,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -15,7 +16,7 @@ const Reviews = () => {
       <Heading fontWeight="500" fontSize="20px">
         {reviewList.length} reviews
       </Heading>
-      <Text color="gray.500">Average rating will appear after 5 ratings</Text>
+      <Text color="gray.500">Average rating will appear after 10 ratings</Text>
       <SimpleGrid mt="5" columns={{ base: 1, md: 2 }}>
         {reviewList.slice(0, 6).map((item) => (
           <>
@@ -27,13 +28,24 @@ const Reviews = () => {
                   <Text>{item.date}</Text>
                 </VStack>
               </HStack>
-              <Text w={{ base: "100%", md: "75%" }}>
-                {item.review.slice(50)}
-              </Text>
+
+              {item.review.length > 50 ? (
+                <Text w={{ base: "100%", md: "75%" }}>
+                  {item.review.slice(0, 150)}...
+                </Text>
+              ) : (
+                <Text w={{ base: "100%", md: "75%" }}>{item.review}</Text>
+              )}
             </VStack>
           </>
         ))}
       </SimpleGrid>
+      <VStack align='left' spacing='5'>
+        <Button bg='white' w='30%' textDecoration="underline">Show more </Button>
+        <Button bg="white" p="6" border="1px solid" w="30%">
+          See all {reviewList.length} reviews
+        </Button>
+      </VStack>
     </Box>
   );
 };

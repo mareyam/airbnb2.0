@@ -41,7 +41,7 @@ const Navbar = () => {
       minW="100vw"
       position="sticky"
       top="0"
-      zIndex="105"
+      zIndex="1000"
       borderBottom="1px solid #E2E8F0"
     >
       <Flex
