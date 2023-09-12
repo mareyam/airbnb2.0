@@ -49,7 +49,7 @@ const Places = () => {
             <HStack w="100%" spacing="15" justifyContent="space-between">
               <Box display={{ base: "block", md: "flex" }}>
                 <Text fontWeight="600">Display total price | </Text>
-                <Text color="gray.500" pl={{base:"0", md:"2"}}>
+                <Text color="gray.500" pl={{ base: "0", md: "2" }}>
                   {" "}
                   Includes all fees, before taxes
                 </Text>

@@ -11,21 +11,16 @@ import {
 const CardImage = () => {
   return (
     <Container maxW="container.xl" overflowX="hidden">
-      <Heading 
-        mt='5'
-      
-      
-      >Airbnb it easily with Airbnb Setup</Heading>
+      <Heading mt="5">Airbnb it easily with Airbnb Setup</Heading>
       <Image
         src={"/hostimage.webp"}
         objectPosition="center"
         objectFit="cover"
-        
         w="100%"
-        mt='5'
+        mt="5"
         h={{ base: "300px", md: "100%" }}
       />
-      <SimpleGrid columns={{ base: 1, md: 3 }} mt='10' mb='5'>
+      <SimpleGrid columns={{ base: 1, md: 3 }} mt="10" mb="5">
         <Box w={{ base: "100%", md: "90%" }}>
           <Heading fontSize="20px">
             One-to-one guidance from a Superhost
@@ -43,8 +38,7 @@ const CardImage = () => {
           </Heading>
           <Text>
             For your first booking, you can choose to welcome an experienced
-            guest who has at least three stays and a good track record on
-            Airbnb.
+            guest who has at least three and a good track record on Airbnb.
           </Text>
         </Box>
 
