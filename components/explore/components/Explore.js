@@ -1,5 +1,5 @@
 import { usePlaces } from "@/hooks/usePlaces";
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   SimpleGrid,
@@ -10,7 +10,8 @@ import {
   Text,
   Heading,
 } from "@chakra-ui/react";
-import React from "react";
+import Fade from "react-reveal/Fade";
+import { Element, scroller } from "react-scroll";
 
 const Explore = () => {
   const { data, isLoading, isError } = usePlaces();
@@ -25,32 +26,72 @@ const Explore = () => {
     return <div>Error fetching data</div>;
   }
 
-  //   const [placesList, setPlacesList] = useState([]);
+  const [isVisible, setIsVisible] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("down"); // Initial scroll direction
 
-  //   const { data: places } = usePlaces();
-  //   console.log({ places });
+  {
+    data &&
+      useEffect(() => {
+        const handleScroll = () => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY > 0) {
+            // Scrolling down
+            if (scrollDirection !== "down") {
+              // Only change the state when changing direction
+              setScrollDirection("down");
+              setIsVisible(true);
+            }
+          } else {
+            // Scrolling up
+            if (scrollDirection !== "up") {
+              // Only change the state when changing direction
+              setScrollDirection("up");
+              setIsVisible(false);
+            }
+          }
+        };
+
+        // Attach the scroll event listener
+        window.addEventListener("scroll", handleScroll);
+
+        // Remove the scroll event listener on component unmount
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, [scrollDirection]);
+  }
 
   return (
     <Container maxW="container.xl">
-      <Heading mt="2" mb="2" fontSize="25px">
-        Explore nearby
-      </Heading>
-      <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="5">
-        {/* <p>showing data in Places.js</p> */}
-        {data?.map((item) => (
-          <HStack>
-            <Image borderRadius="10%" src={item.image} h="100px" w="100px" />
-            <VStack textAlign="left" align="left">
-              <Text fontWeight="700" fontSize="12px">
-                {item.title}
-              </Text>
-              <Text color="gray.600" fontSize="12px">
-                {item.location}
-              </Text>
-            </VStack>
-          </HStack>
-        ))}
-      </SimpleGrid>
+      <Element name="nextSection">
+        <Fade left in={false} unmountOnExit>
+          <Heading mt="2" mb="2" fontSize="25px">
+            Explore nearby
+          </Heading>
+          <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="5">
+            {/* <p>showing data in Places.js</p> */}
+            {data?.map((item) => (
+              <HStack>
+                <Image
+                  borderRadius="10%"
+                  src={item.image}
+                  h="100px"
+                  w="100px"
+                />
+                <VStack textAlign="left" align="left">
+                  <Text fontWeight="700" fontSize="12px">
+                    {item.title}
+                  </Text>
+                  <Text color="gray.600" fontSize="12px">
+                    {item.location}
+                  </Text>
+                </VStack>
+              </HStack>
+            ))}
+          </SimpleGrid>
+        </Fade>
+      </Element>
     </Container>
   );
 };

@@ -43,6 +43,7 @@ const Navbar = () => {
       top="0"
       zIndex="1000"
       borderBottom="1px solid #E2E8F0"
+      bgColor="white"
     >
       <Flex
         align="center"

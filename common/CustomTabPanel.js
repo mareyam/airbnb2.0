@@ -16,6 +16,7 @@ import {
   Collapse,
 } from "@chakra-ui/react";
 import { useFooter } from "@/hooks/useFooter";
+import Fade from "react-reveal/Fade";
 
 const CustomTabPanel = ({ start, end }) => {
   const [show, setShow] = React.useState(false);
@@ -40,12 +41,14 @@ const CustomTabPanel = ({ start, end }) => {
       <Box>
         <SimpleGrid columns={{ base: 2, md: 6 }}>
           {data?.slice(start, start + itemsToShow).map((item) => (
-            <VStack spacing="0" mt="5" align="left">
-              <Text fontSize={{ base: "15px", md: "15px" }} fontWeight="700">
-                {item.name}
-              </Text>
-              <Text fontSize={{ base: "12px", md: "14px" }}>{item.type}</Text>
-            </VStack>
+            <Fade up>
+              <VStack spacing="0" mt="5" align="left">
+                <Text fontSize={{ base: "15px", md: "15px" }} fontWeight="700">
+                  {item.name}
+                </Text>
+                <Text fontSize={{ base: "12px", md: "14px" }}>{item.type}</Text>
+              </VStack>
+            </Fade>
           ))}
           <Box
             onClick={handleToggle}

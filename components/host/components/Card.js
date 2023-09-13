@@ -32,7 +32,7 @@ const Card = () => {
   };
 
   return (
-    <Container maxW="container.xl" minH="100vh" border="2px solid">
+    <Container maxW="container.xl" minH="100vh">
       <Center w="100%" h="100vh">
         <SimpleGrid columns={{ base: 1, md: 2 }} w="100%">
           <VStack textAlign="center" justifyContent="center">
@@ -72,7 +72,6 @@ const Card = () => {
           </Box>
         </SimpleGrid>
       </Center>
-      <Locations />
     </Container>
   );
 };

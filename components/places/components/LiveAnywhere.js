@@ -1,5 +1,5 @@
+import React from "react";
 import { usePlaces } from "@/hooks/usePlaces";
-import { useEffect, useState } from "react";
 import {
   Container,
   SimpleGrid,
@@ -10,8 +10,7 @@ import {
   Text,
   Heading,
 } from "@chakra-ui/react";
-import React from "react";
-import SwiperCarousel from "./SwiperCarousel";
+import Slide from "react-reveal/Slide";
 
 const LiveAnywhere = () => {
   const { data, isLoading, isError } = usePlaces();
@@ -29,19 +28,21 @@ const LiveAnywhere = () => {
   return (
     <Container maxW="container.xl">
       {/* <SwiperCarousel /> */}
-      <Heading mt="2" mb="2" fontSize="25px">
-        Live Anywhere
-      </Heading>
-      <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="1">
-        {data?.slice(0, 4).map((item) => (
-          <VStack textAlign="left" align="left">
-            <Image borderRadius="5%" src={item.image} h="300px" w="300px" />
-            <Text fontWeight="600" fontSize="20px">
-              {item.title}
-            </Text>
-          </VStack>
-        ))}
-      </SimpleGrid>
+      <Slide left>
+        <Heading mt="2" mb="2" fontSize="25px">
+          Live Anywhere
+        </Heading>
+        <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="1">
+          {data?.slice(0, 4).map((item) => (
+            <VStack textAlign="left" align="left">
+              <Image borderRadius="5%" src={item.image} h="300px" w="300px" />
+              <Text fontWeight="600" fontSize="20px">
+                {item.title}
+              </Text>
+            </VStack>
+          ))}
+        </SimpleGrid>
+      </Slide>
     </Container>
   );
 };

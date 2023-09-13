@@ -111,7 +111,7 @@ const DetailsInformation = () => {
         mt="3"
         w={{ base: "100%", md: "35%" }}
         marginLeft={{ base: 0, md: "15%" }}
-        position="sticky"
+        position="fixed"
         // height={`${fixedHeight}px`}
         top={scrollTop > fixedHeight ? -fixedHeight : 0}
       >

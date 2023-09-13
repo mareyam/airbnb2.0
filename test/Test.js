@@ -1,58 +1,165 @@
-import React, { useState } from "react";
-import { Box, Image, Text, Tooltip } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import Fade from "react-reveal/Fade";
+import { Element, scroller } from "react-scroll";
 
-const MapWithTooltips = () => {
-  const [tooltipData, setTooltipData] = useState(null);
+const ScrollRevealContent = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("down"); // Initial scroll direction
 
-  const handleTooltipOpen = (place) => {
-    setTooltipData(place);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-  const handleTooltipClose = () => {
-    setTooltipData(null);
-  };
+      if (currentScrollY > 0) {
+        // Scrolling down
+        if (scrollDirection !== "down") {
+          // Only change the state when changing direction
+          setScrollDirection("down");
+          setIsVisible(true);
+        }
+      } else {
+        // Scrolling up
+        if (scrollDirection !== "up") {
+          // Only change the state when changing direction
+          setScrollDirection("up");
+          setIsVisible(false);
+        }
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove the scroll event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollDirection]);
+
+  // const scrollToNextSection = () => {
+  //   scroller.scrollTo("nextSection", {
+  //     duration: 100,
+  //     smooth: true,
+  //   });
+  // };
 
   return (
-    <Box position="relative">
-      <Box
-        bgImage="/map1.png"
-        alt="Map"
-        maxW="100vw"
-        h="100vh"
-        onMouseLeave={handleTooltipClose}
-      >
-        {placesData.map((place, index) => (
-          <Tooltip key={index} label={place.name} aria-label={place.name}>
-            <Text>Helo</Text>
-          </Tooltip>
-        ))}
-      </Box>
-    </Box>
+    <div style={{ height: "200vh" }}>
+      <Element name="nextSection">
+        <div style={{ textAlign: "center", paddingTop: "50vh" }}>
+          <Fade left when={isVisible}>
+            <h1>Fade In on Scroll</h1>
+            <p>Scroll down to see the content appear.</p>
+            {/* <button onClick={scrollToNextSection}>
+              Scroll to Next Section
+            </button> */}
+          </Fade>
+        </div>
+      </Element>
+    </div>
   );
 };
 
-export default MapWithTooltips;
+export default ScrollRevealContent;
 
-const placesData = [
-  {
-    name: "img 1",
-    x: 100,
-    y: 200,
-    image: "/img1.png",
-  },
-  {
-    name: "img 2",
-    x: 300,
-    y: 400,
-    image: "img2.png",
-  },
-  {
-    name: "img 3",
-    x: 500,
-    y: 600,
-    image: "img3.png",
-  },
-];
+// import React, { useEffect } from "react";
+// import { useSpring, animated } from "react-spring";
+
+// const ParallaxScroll = () => {
+//   // Create a spring for the parallax effect
+//   const [{ y }, set] = useSpring(() => ({ y: 0 }));
+
+//   // Update the spring's value based on the scroll position
+//   const handleScroll = () => {
+//     set({ y: window.scrollY });
+//   };
+
+//   // Attach the scroll event listener
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll);
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   return (
+//     <div style={{ height: "200vh" }}>
+//       <animated.div
+//         style={{
+//           transform: y.interpolate((value) => `translateY(${value * 0.5}px)`),
+//           height: "100vh",
+//           width: "100%",
+//           backgroundColor: "lightblue",
+//           display: "flex",
+//           alignItems: "center",
+//           justifyContent: "center",
+//           fontSize: "24px",
+//         }}
+//       >
+//         Parallax Content
+//       </animated.div>
+//       {/* Add more content below */}
+//     </div>
+//   );
+// };
+
+// export default ParallaxScroll;
+
+// import React, { useState } from "react";
+// import { Box, Image, Text, Tooltip } from "@chakra-ui/react";
+
+// const MapWithTooltips = () => {
+//   const [tooltipData, setTooltipData] = useState(null);
+
+//   const handleTooltipOpen = (place) => {
+//     setTooltipData(place);
+//   };
+
+//   const handleTooltipClose = () => {
+//     setTooltipData(null);
+//   };
+
+//   return (
+//     <Box position="relative">
+//       <Box
+//         bgImage="/map1.png"
+//         alt="Map"
+//         maxW="100vw"
+//         h="100vh"
+//         onMouseLeave={handleTooltipClose}
+//       >
+//         {placesData.map((place, index) => (
+//           <Tooltip key={index} label={place.name} aria-label={place.name}>
+//             <Text>Helo</Text>
+//           </Tooltip>
+//         ))}
+//       </Box>
+//     </Box>
+//   );
+// };
+
+// export default MapWithTooltips;
+
+// const placesData = [
+//   {
+//     name: "img 1",
+//     x: 100,
+//     y: 200,
+//     image: "/img1.png",
+//   },
+//   {
+//     name: "img 2",
+//     x: 300,
+//     y: 400,
+//     image: "img2.png",
+//   },
+//   {
+//     name: "img 3",
+//     x: 500,
+//     y: 600,
+//     image: "img3.png",
+//   },
+// ];
 
 // import React, { useState, useEffect } from "react";
 // import { SimpleGrid, Box, Text } from "@chakra-ui/react";

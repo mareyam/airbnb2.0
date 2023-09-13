@@ -27,7 +27,9 @@ function LandingImage() {
         left="50%"
         transform="translate(-50%, -50%)"
       >
-        <CenterCard />
+          <CenterCard />
+
+      
       </Box>
     </Box>
   );
