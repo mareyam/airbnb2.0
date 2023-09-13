@@ -27,7 +27,7 @@ const CardImage = () => {
         />
       </Fade>
       <SimpleGrid columns={{ base: 1, md: 3 }} mt="10" mb="5">
-        <Fade left>
+        <Fade left delay={500}>
           <Box w={{ base: "100%", md: "90%" }}>
             <Heading fontSize="20px">
               One-to-one guidance from a Superhost
@@ -39,7 +39,7 @@ const CardImage = () => {
             </Text>
           </Box>
         </Fade>
-        <Fade up>
+        <Fade up delay={1000}>
           <Box w={{ base: "100%", md: "90%" }}>
             <Heading fontSize="20px">
               An experienced guest for your first booking
@@ -51,7 +51,7 @@ const CardImage = () => {
           </Box>
         </Fade>
 
-        <Fade right>
+        <Fade right delay={1500}>
           <Box w={{ base: "100%", md: "90%" }}>
             <Heading fontSize="20px">Specialized support from Airbnb</Heading>
             <Text>
