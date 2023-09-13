@@ -4,9 +4,9 @@ import React from "react";
 const test = () => {
   return (
     <div>
-      {/* <Test /> */}
-
       <p>test file</p>
+
+      <Test />
     </div>
   );
 };

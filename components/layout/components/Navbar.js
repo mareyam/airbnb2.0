@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <Container
       minW="100vw"
-      position="sticky"
+      position="fixed"
       top="0"
       zIndex="1000"
       borderBottom="1px solid #E2E8F0"

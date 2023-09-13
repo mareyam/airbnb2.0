@@ -1,10 +1,32 @@
 import React, { useState } from "react";
-import { Box, Image, Tooltip } from "@chakra-ui/react";
+import { Box, Image, Text, Tooltip } from "@chakra-ui/react";
 
 const MapWithTooltips = () => {
+  const [tooltipData, setTooltipData] = useState(null);
+
+  const handleTooltipOpen = (place) => {
+    setTooltipData(place);
+  };
+
+  const handleTooltipClose = () => {
+    setTooltipData(null);
+  };
+
   return (
     <Box position="relative">
-      <Box bgImage="map1.png" alt="Map" maxW="100%"></Box>
+      <Box
+        bgImage="/map1.png"
+        alt="Map"
+        maxW="100vw"
+        h="100vh"
+        onMouseLeave={handleTooltipClose}
+      >
+        {placesData.map((place, index) => (
+          <Tooltip key={index} label={place.name} aria-label={place.name}>
+            <Text>Helo</Text>
+          </Tooltip>
+        ))}
+      </Box>
     </Box>
   );
 };
@@ -16,7 +38,7 @@ const placesData = [
     name: "img 1",
     x: 100,
     y: 200,
-    image: "img1.png",
+    image: "/img1.png",
   },
   {
     name: "img 2",
