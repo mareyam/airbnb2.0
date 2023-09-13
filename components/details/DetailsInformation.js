@@ -16,7 +16,7 @@ import ReserveSmallCard from "../reserve/ReserveSmallCard";
 
 const DetailsInformation = () => {
   const [scrollTop, setScrollTop] = useState(0);
-  const fixedHeight = 100;
+  const fixedHeight = 200;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,8 +112,11 @@ const DetailsInformation = () => {
         w={{ base: "100%", md: "35%" }}
         marginLeft={{ base: 0, md: "15%" }}
         position="fixed"
+        right="10"
+        bottom="3"
+        // position="fixed"
         // height={`${fixedHeight}px`}
-        top={scrollTop > fixedHeight ? -fixedHeight : 0}
+        // top={scrollTop > fixedHeight ? -fixedHeight : 0}
       >
         <ReserveSmallCard />
       </Box>

@@ -61,41 +61,40 @@ const Explore = () => {
         };
       }, [scrollDirection]);
   }
+  const delay = 100;
 
   return (
     <Container maxW="container.xl">
-      <Element name="nextSection">
-        <Fade left in={false} unmountOnExit>
-          <Heading mt="2" mb="2" fontSize="25px">
-            Explore nearby
-          </Heading>
-          <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="5">
-            {/* <p>showing data in Places.js</p> */}
-            {data?.map((item) => (
-              <HStack>
-                <Image
-                  borderRadius="10%"
-                  src={item.image}
-                  h="100px"
-                  w="100px"
-                />
-                <VStack textAlign="left" align="left">
-                  <Text fontWeight="700" fontSize="12px">
-                    {item.title}
-                  </Text>
-                  <Text color="gray.600" fontSize="12px">
-                    {item.location}
-                  </Text>
-                </VStack>
-              </HStack>
-            ))}
-          </SimpleGrid>
-        </Fade>
-      </Element>
+      <Heading
+        data-aos="fade-left"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+        mt="2"
+        mb="2"
+        fontSize="25px"
+      >
+        Explore nearby
+      </Heading>
+      <Box data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="5">
+          {data?.map((item, index) => (
+            <HStack data-aos-delay={index * delay} key={item.id}>
+              <Image borderRadius="10%" src={item.image} h="100px" w="100px" />
+              <VStack textAlign="left" align="left">
+                <Text fontWeight="700" fontSize="12px">
+                  {item.title}
+                </Text>
+                <Text color="gray.600" fontSize="12px">
+                  {item.location}
+                </Text>
+              </VStack>
+            </HStack>
+          ))}
+        </SimpleGrid>
+      </Box>
     </Container>
   );
 };
-
 export default Explore;
 
 // const PlacesList = [

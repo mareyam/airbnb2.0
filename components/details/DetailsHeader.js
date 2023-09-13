@@ -11,7 +11,7 @@ import React from "react";
 
 const details = () => {
   return (
-    <Box mt="5">
+    <Box mt="10%">
       <Heading
         fontSize="25px"
         fontWeight="600"

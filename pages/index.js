@@ -15,6 +15,7 @@ import FooterImage from "@/components/hero/components/FooterImage";
 import CalenderCard from "@/components/calender/components/CalenderCard";
 import { CalenderProvider } from "@/context/CalenderContext";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {

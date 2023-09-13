@@ -10,7 +10,6 @@ import {
   Container,
   SimpleGrid,
   Skeleton,
-
 } from "@chakra-ui/react";
 import { usePlaces } from "@/hooks/usePlaces";
 
@@ -65,8 +64,17 @@ const GridView = () => {
               boxSize="300px"
               borderRadius="5%"
               w="100%"
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="1000"
             />
-            <Flex w="100%" justifyContent="space-between">
+            <Flex
+              w="100%"
+              justifyContent="space-between"
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="1500"
+            >
               <Box>
                 <Heading fontSize="15px">
                   {item.city}, {item.country}

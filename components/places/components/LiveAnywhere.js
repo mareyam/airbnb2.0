@@ -10,7 +10,6 @@ import {
   Text,
   Heading,
 } from "@chakra-ui/react";
-import Slide from "react-reveal/Slide";
 
 const LiveAnywhere = () => {
   const { data, isLoading, isError } = usePlaces();
@@ -28,7 +27,11 @@ const LiveAnywhere = () => {
   return (
     <Container maxW="container.xl">
       {/* <SwiperCarousel /> */}
-      <Slide left>
+      <Box
+        data-aos="fade-left"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+      >
         <Heading mt="2" mb="2" fontSize="25px">
           Live Anywhere
         </Heading>
@@ -42,7 +45,7 @@ const LiveAnywhere = () => {
             </VStack>
           ))}
         </SimpleGrid>
-      </Slide>
+      </Box>
     </Container>
   );
 };

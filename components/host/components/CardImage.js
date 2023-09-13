@@ -12,11 +12,16 @@ import Fade from "react-reveal/Fade";
 const CardImage = () => {
   return (
     <Container maxW="container.xl" overflowX="hidden">
-      <Fade up>
+      <Box data-aos="fade-up" data-aos-delay="500">
         <Heading mt="5">Airbnb it easily with Airbnb Setup</Heading>
-      </Fade>
+      </Box>
 
-      <Fade down>
+      <Box
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        // data-aos-duration="2000"
+        overflowY="hidden"
+      >
         <Image
           src={"/hostimage.webp"}
           objectPosition="center"
@@ -25,9 +30,9 @@ const CardImage = () => {
           mt="5"
           h={{ base: "300px", md: "100%" }}
         />
-      </Fade>
+      </Box>
       <SimpleGrid columns={{ base: 1, md: 3 }} mt="10" mb="5">
-        <Fade left delay={500}>
+        <Box data-aos="fade-left" data-aos-delay="500">
           <Box w={{ base: "100%", md: "90%" }}>
             <Heading fontSize="20px">
               One-to-one guidance from a Superhost
@@ -38,8 +43,8 @@ const CardImage = () => {
               or chat.
             </Text>
           </Box>
-        </Fade>
-        <Fade up delay={1000}>
+        </Box>
+        <Box data-aos="fade-up" data-aos-delay="700">
           <Box w={{ base: "100%", md: "90%" }}>
             <Heading fontSize="20px">
               An experienced guest for your first booking
@@ -49,9 +54,9 @@ const CardImage = () => {
               guest who has at least three and a good track record on Airbnb.
             </Text>
           </Box>
-        </Fade>
+        </Box>
 
-        <Fade right delay={1500}>
+        <Box data-aos="fade-right" data-aos-delay="900">
           <Box w={{ base: "100%", md: "90%" }}>
             <Heading fontSize="20px">Specialized support from Airbnb</Heading>
             <Text>
@@ -60,7 +65,7 @@ const CardImage = () => {
               billing support.
             </Text>
           </Box>
-        </Fade>
+        </Box>
       </SimpleGrid>
     </Container>
   );

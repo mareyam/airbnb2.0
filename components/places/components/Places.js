@@ -22,7 +22,7 @@ import Filters from "@/common/Filters";
 
 const Places = () => {
   return (
-    <Container maxW="container.xl" zIndex="90">
+    <Container maxW="container.xl" zIndex="90" mt={{ base: "20%", md: "5%" }}>
       <VStack align="left">
         {/* <ChakraTabs /> */}
         <HStack w="100%" position="sticky" top="0">

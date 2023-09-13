@@ -41,14 +41,14 @@ const CustomTabPanel = ({ start, end }) => {
       <Box>
         <SimpleGrid columns={{ base: 2, md: 6 }}>
           {data?.slice(start, start + itemsToShow).map((item) => (
-            <Fade up>
+            <Box data-aos="fade-up" data-aos-delay="200">
               <VStack spacing="0" mt="5" align="left">
                 <Text fontSize={{ base: "15px", md: "15px" }} fontWeight="700">
                   {item.name}
                 </Text>
                 <Text fontSize={{ base: "12px", md: "14px" }}>{item.type}</Text>
               </VStack>
-            </Fade>
+            </Box>
           ))}
           <Box
             onClick={handleToggle}
