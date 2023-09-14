@@ -1,4 +1,4 @@
-import { Center, Stack, Box, Button, Heading, VStack } from "@chakra-ui/react";
+import { Center, Stack, Box, Button, Link, NextLink, Heading, VStack } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -24,7 +24,9 @@ export default function CenterCard() {
             onHoverEnd={(e) => {}}
             align="center"
           >
-            <Button w="100%">I'm flexible</Button>
+            <Link as={NextLink} href="/places">
+              <Button w="100%">I'm flexible</Button>
+            </Link>
           </motion.a>
         </Stack>
       </VStack>

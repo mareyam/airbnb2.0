@@ -7,11 +7,15 @@ import {
   Text,
   Heading,
 } from "@chakra-ui/react";
-import Fade from "react-reveal/Fade";
+import Reveal from "react-reveal/Reveal";
 
 const CardImage = () => {
   return (
     <Container maxW="container.xl" overflowX="hidden">
+      {/* <Reveal effect="fadeInUp" effectOut="fadeOutLeft" data-aos-delay="500">
+        <p>Markup that will be revealed on scroll</p>
+      </Reveal> */}
+
       <Box data-aos="fade-up" data-aos-delay="500">
         <Heading mt="5">Airbnb it easily with Airbnb Setup</Heading>
       </Box>
@@ -21,6 +25,7 @@ const CardImage = () => {
         data-aos-easing="linear"
         // data-aos-duration="2000"
         overflowY="hidden"
+        style={{ overflow: "hidden" }}
       >
         <Image
           src={"/hostimage.webp"}

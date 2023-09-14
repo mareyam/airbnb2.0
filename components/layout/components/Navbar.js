@@ -44,7 +44,6 @@ const Navbar = () => {
       zIndex="1000"
       borderBottom="1px solid #E2E8F0"
       bgColor="white"
-      border="2px solid"
     >
       <Flex
         align="center"
