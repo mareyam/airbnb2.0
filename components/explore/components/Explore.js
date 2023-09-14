@@ -34,6 +34,7 @@ const Explore = () => {
       useEffect(() => {
         const handleScroll = () => {
           const currentScrollY = window.scrollY;
+          console.log("current scoll is"+currentScrollY);
 
           if (currentScrollY > 0) {
             // Scrolling down

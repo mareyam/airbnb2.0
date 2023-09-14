@@ -11,6 +11,7 @@ import {
   Image,
   Collapse,
   Button,
+  position,
 } from "@chakra-ui/react";
 import ReserveSmallCard from "../reserve/ReserveSmallCard";
 
@@ -20,7 +21,9 @@ const DetailsInformation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const currentScrollY = window.scrollY;
       setScrollTop(window.scrollY);
+      console.log("in details info" + currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,8 +33,10 @@ const DetailsInformation = () => {
     };
   }, []);
 
-  const [show, setShow] = useState(false);
+  const positionStyle =
+    scrollTop > "455px" || scrollTop < "690px" ? "fixed" : "relative";
 
+  const [show, setShow] = useState(false);
   const handleToggle = () => setShow(!show);
   return (
     <HStack
@@ -111,12 +116,9 @@ const DetailsInformation = () => {
         mt="3"
         w={{ base: "100%", md: "35%" }}
         marginLeft={{ base: 0, md: "15%" }}
-        position="fixed"
+        position={positionStyle}
         right="10"
         bottom="3"
-        // position="fixed"
-        // height={`${fixedHeight}px`}
-        // top={scrollTop > fixedHeight ? -fixedHeight : 0}
       >
         <ReserveSmallCard />
       </Box>
