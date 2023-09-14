@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 
-const AnimatedTextCharacter = ({ text }) => {
+const AnimatedTextCharacter = () => {
+
+  const text  = 'hello world';
   const letters = Array.from(text);
 
   const container = {

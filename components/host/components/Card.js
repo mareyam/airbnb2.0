@@ -17,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Map from "./Map";
+import TypeWriter from "@/common/TypeWriter";
 
 const Card = () => {
   const [sliderValue, setSliderValue] = useState(1);
@@ -41,12 +42,15 @@ const Card = () => {
               fontSize={{ base: "40px", md: "50px" }}
               color="red.300"
             >
-              Airbnb it.
+              <TypeWriter text={"Airbnb it"} />
+              {/* // Airbnb it. */}
             </Heading>
             <Heading fontSize="40px" fontWeight="500">
-              You could earn
+              <TypeWriter text={"You could earn"} />
             </Heading>
-            <Heading fontSize="60px">${cost}</Heading>
+            <Heading fontSize="60px">
+              {/* $<TypeWriter text={cost} /> */}${cost}
+            </Heading>
             <Slider
               aria-label="slider-ex-1"
               defaultValue={sliderValue}

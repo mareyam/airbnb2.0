@@ -8,6 +8,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import Reveal from "react-reveal/Reveal";
+import TypeWriter from "@/common/TypeWriter";
 
 const CardImage = () => {
   return (
@@ -17,7 +18,9 @@ const CardImage = () => {
       </Reveal> */}
 
       <Box data-aos="fade-up" data-aos-delay="500">
-        <Heading mt="5">Airbnb it easily with Airbnb Setup</Heading>
+        <Heading mt="5">
+          <TypeWriter text={"Airbnb it easily with Airbnb Setup"} />
+        </Heading>
       </Box>
 
       <Box

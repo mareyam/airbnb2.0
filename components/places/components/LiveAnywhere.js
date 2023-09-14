@@ -31,6 +31,7 @@ const LiveAnywhere = () => {
         data-aos="fade-left"
         data-aos-easing="linear"
         data-aos-duration="1500"
+        data-aos-delay="500"
       >
         <Heading mt="2" mb="2" fontSize="25px">
           Live Anywhere

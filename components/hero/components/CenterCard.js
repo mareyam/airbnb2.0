@@ -1,20 +1,32 @@
-import { Center, Stack, Box, Button, Link, NextLink, Heading, VStack } from "@chakra-ui/react";
+import {
+  Center,
+  Stack,
+  Box,
+  Button,
+  Link,
+  NextLink,
+  Heading,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
+import TypeWriter from "@/common/TypeWriter";
+
 import { motion } from "framer-motion";
 
 export default function CenterCard() {
+  const text = "Not sure where to go? Perfecttt.";
   return (
     <Center h="100%">
       <VStack textAlign="left" padding="5%" bgColor="white" opacity="0.75">
         <Stack spacing="2">
           <Heading
             marginTop="5%"
-            fontSize="16px"
+            fontSize="24px"
             fontWeight="bold"
             fontFamily="Poppins"
             letterSpacing="2px"
           >
-            Not sure where to go? Perfecttt.
+            <TypeWriter text={text} />
           </Heading>
           {/* <Button>I'm flexible</Button> */}
 

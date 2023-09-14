@@ -17,12 +17,13 @@ import {
   Divider,
   Flex,
   Link,
+  NextLink,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { DragHandleIcon, Search2Icon, SearchIcon } from "@chakra-ui/icons";
-import NextLink from "next/link";
 import { BsGlobe } from "react-icons/bs";
 import { useCalender } from "@/context/CalenderContext";
+import Test from "@/test/Test";
 
 const Navbar = () => {
   const src = useBreakpointValue({
@@ -67,6 +68,8 @@ const Navbar = () => {
             placeholder="Start your search"
             onChange={handleInputChange}
           />
+
+          <Test />
           <IconButton
             className="hidden md:inline-flex bg-red-400 text-white p-2"
             transition="all 0.3s ease-out"
@@ -102,13 +105,16 @@ const Navbar = () => {
           >
             <Box display="flex">
               <Box className="flex items-center rounded-full">
-                <Button
-                  className="flex items-center rounded-full"
-                  borderRadius="full"
-                  bg="gray.200"
-                >
-                  Become a host
-                </Button>
+                <Link as={NextLink} href="/host">
+                  <Button
+                    className="flex items-center rounded-full"
+                    borderRadius="full"
+                    bg="gray.200"
+                  >
+                    Become a host
+                  </Button>
+                </Link>
+
                 <IconButton
                   className="hidden md:inline-flex bg-red-400 text-white p-2"
                   transition="all 0.3s ease-out"

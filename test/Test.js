@@ -1,66 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Fade from "react-reveal/Fade";
-import { Element, scroller } from "react-scroll";
+import React from 'react'
 
-const ScrollRevealContent = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState("down"); // Initial scroll direction
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > 0) {
-        // Scrolling down
-        if (scrollDirection !== "down") {
-          // Only change the state when changing direction
-          setScrollDirection("down");
-          setIsVisible(true);
-        }
-      } else {
-        // Scrolling up
-        if (scrollDirection !== "up") {
-          // Only change the state when changing direction
-          setScrollDirection("up");
-          setIsVisible(false);
-        }
-      }
-    };
-
-    // Attach the scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Remove the scroll event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrollDirection]);
-
-  // const scrollToNextSection = () => {
-  //   scroller.scrollTo("nextSection", {
-  //     duration: 100,
-  //     smooth: true,
-  //   });
-  // };
-
+const Test = () => {
   return (
-    <div style={{ height: "200vh" }}>
-      <Element name="nextSection">
-        <div style={{ textAlign: "center", paddingTop: "50vh" }}>
-          <Fade left when={isVisible}>
-            <h1>Fade In on Scroll</h1>
-            <p>Scroll down to see the content appear.</p>
-            {/* <button onClick={scrollToNextSection}>
-              Scroll to Next Section
-            </button> */}
-          </Fade>
-        </div>
-      </Element>
-    </div>
-  );
-};
+    <div>Test</div>
+  )
+}
 
-export default ScrollRevealContent;
+export default Test
 
 // import React, { useEffect } from "react";
 // import { useSpring, animated } from "react-spring";
