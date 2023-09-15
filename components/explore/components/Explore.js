@@ -34,7 +34,7 @@ const Explore = () => {
       useEffect(() => {
         const handleScroll = () => {
           const currentScrollY = window.scrollY;
-          console.log("current scoll is"+currentScrollY);
+          console.log("current scoll is" + currentScrollY);
 
           if (currentScrollY > 0) {
             // Scrolling down
@@ -69,27 +69,43 @@ const Explore = () => {
       <Heading
         data-aos="fade-left"
         data-aos-easing="linear"
-        data-aos-duration="1500"
+        data-aos-duration="300"
         mt="2"
         mb="2"
         fontSize="25px"
       >
         Explore nearby
       </Heading>
-      <Box data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <Box
+        data-aos="fade-left"
+        data-aos-easing="linear"
+        // data-aos-duration="300"
+      >
         <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="5">
           {data?.map((item, index) => (
-            <HStack data-aos-delay={index * delay} key={item.id}>
-              <Image borderRadius="10%" src={item.image} h="100px" w="100px" />
-              <VStack textAlign="left" align="left">
-                <Text fontWeight="700" fontSize="12px">
-                  {item.title}
-                </Text>
-                <Text color="gray.600" fontSize="12px">
-                  {item.location}
-                </Text>
-              </VStack>
-            </HStack>
+            <Box role="group">
+              <HStack
+                // data-aos-delay={index * delay}
+                key={item.id}
+                _groupHover={{ transform: "scale(1.05)" }}
+                transition="all 0.5s ease"
+              >
+                <Image
+                  borderRadius="10%"
+                  src={item.image}
+                  h="100px"
+                  w="100px"
+                />
+                <VStack textAlign="left" align="left">
+                  <Text fontWeight="700" fontSize="12px">
+                    {item.title}
+                  </Text>
+                  <Text color="gray.600" fontSize="12px">
+                    {item.location}
+                  </Text>
+                </VStack>
+              </HStack>
+            </Box>
           ))}
         </SimpleGrid>
       </Box>

@@ -69,7 +69,7 @@ const Navbar = () => {
             onChange={handleInputChange}
           />
 
-          <Test />
+          {/* <Test /> */}
           <IconButton
             className="hidden md:inline-flex bg-red-400 text-white p-2"
             transition="all 0.3s ease-out"
@@ -103,13 +103,15 @@ const Navbar = () => {
             justifyContent="space-around"
             gap="3"
           >
-            <Box display="flex">
+            <Box display="flex" role="group">
               <Box className="flex items-center rounded-full">
                 <Link as={NextLink} href="/host">
                   <Button
                     className="flex items-center rounded-full"
                     borderRadius="full"
                     bg="gray.200"
+                    _groupHover={{ transform: "scale(1.05)" }}
+                    transition="all 0.5s ease"
                   >
                     Become a host
                   </Button>

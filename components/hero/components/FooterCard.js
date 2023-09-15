@@ -8,6 +8,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
+import { motion } from "framer-motion";
 
 const FooterCard = () => {
   return (
@@ -27,11 +28,17 @@ const FooterCard = () => {
         Wishlists curated by Airbnb
       </Text>
 
-      <Link as={NextLink} href="/places">
-        <Button bg="black" color="white">
-          Get started
-        </Button>
-      </Link>
+      <Box role="group">
+        <Link as={NextLink} href="/places">
+          <Button
+            w="50%"
+            _groupHover={{ transform: "scale(1.05)" }}
+            transition="all 0.25s ease"
+          >
+            Get started
+          </Button>
+        </Link>
+      </Box>
     </VStack>
   );
 };

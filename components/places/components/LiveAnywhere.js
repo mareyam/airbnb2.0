@@ -27,23 +27,25 @@ const LiveAnywhere = () => {
   return (
     <Container maxW="container.xl">
       {/* <SwiperCarousel /> */}
-      <Box
-        data-aos="fade-left"
-        data-aos-easing="linear"
-        data-aos-duration="1500"
-        data-aos-delay="500"
-      >
-        <Heading mt="2" mb="2" fontSize="25px">
+      <Box data-aos="fade-left" data-aos-easing="linear" data-aos-delay="300">
+        <Heading mt="10" mb="2" fontSize="25px">
           Live Anywhere
         </Heading>
-        <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="1">
+        <SimpleGrid my="5" columns={{ base: 1, md: 4 }} spacing="1">
           {data?.slice(0, 4).map((item) => (
-            <VStack textAlign="left" align="left">
-              <Image borderRadius="5%" src={item.image} h="300px" w="300px" />
-              <Text fontWeight="600" fontSize="20px">
-                {item.title}
-              </Text>
-            </VStack>
+            <Box role="group">
+              <VStack
+                textAlign="left"
+                align="left"
+                _groupHover={{ transform: "scale(1.05)" }}
+                transition="all 0.5s ease"
+              >
+                <Image borderRadius="5%" src={item.image} h="300px" w="300px" />
+                <Text fontWeight="600" fontSize="20px">
+                  {item.title}
+                </Text>
+              </VStack>
+            </Box>
           ))}
         </SimpleGrid>
       </Box>

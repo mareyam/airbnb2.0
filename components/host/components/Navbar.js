@@ -61,7 +61,7 @@ const Navbar = () => {
             gap="3"
           >
             <Box display="flex">
-              <Box className="flex items-center rounded-full">
+              <Box className="flex items-center rounded-full" role="group">
                 <Text fontWeight="500" pr="5">
                   Ready to Airbnb it?
                 </Text>
@@ -70,6 +70,8 @@ const Navbar = () => {
                   bgColor="red.300"
                   color="white"
                   className="flex items-center rounded-full"
+                  _groupHover={{ transform: "scale(1.05)" }}
+                  transition="all 0.5s ease"
                 >
                   Become a host
                 </Button>

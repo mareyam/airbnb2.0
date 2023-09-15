@@ -37,7 +37,7 @@ export default function CenterCard() {
             align="center"
           >
             <Link as={NextLink} href="/places">
-              <Button w="100%">I'm flexible</Button>
+              <Button w="90%">I'm flexible</Button>
             </Link>
           </motion.a>
         </Stack>

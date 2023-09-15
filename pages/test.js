@@ -27,9 +27,11 @@ import {
   Input,
   HStack,
   Divider,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 const test = () => {
+  const { isOpen, onToggle, onClose } = useDisclosure();
   const [value, setValue] = useState({
     startDate: new Date(),
     endDate: new Date().setMonth(11),
@@ -40,20 +42,55 @@ const test = () => {
     setValue(newValue);
   };
 
+  const [selectedRegion, setSelectedRegion] = useState("");
+  const handleRegionSelect = (regionName) => {
+    setSelectedRegion(regionName);
+    onClose();
+  };
+
   return (
-    <Box w="100vw" h="100vh" justifyContent="center" align="center">
-      <Popover w={{ base: "100%", md: "700px" }}>
-        <PopoverTrigger>
-          <Button>Trigger</Button>
-        </PopoverTrigger>
-        <PopoverContent border="none" w={{ base: "100%", md: "700px" }}>
+    <Box
+      w="100vw"
+      h="100vh"
+      align="center"
+      placement="center"
+      justifyContent="center"
+    >
+      <Button onClick={onToggle}>Trigger</Button>
+      <Popover
+        w={{ base: "100%", md: "700px" }}
+        border="2px solid"
+        isOpen={isOpen}
+        onClose={onClose}
+        closeOnBlur={false}
+        mt="5"
+        align="center"
+        placement="center"
+        justifyContent="center"
+      >
+        <PopoverContent
+          border="none"
+          w={{ base: "100%", md: "700px" }}
+          align="center"
+          placement="center"
+          justifyContent="center"
+        >
           <PopoverArrow />
-          <PopoverBody>
+          <PopoverBody
+            align="center"
+            placement="center"
+            justifyContent="center"
+          >
             <Tabs variant="soft-rounded" colorScheme="green" w="100%">
               <TabList align="left">
                 <Tab textAlign="left" display="block" w="800px">
                   <Heading fontSize="13px"> Where</Heading>
                   <Text fontSize="10px">Search destinations</Text>
+                  {/* {selectedRegion ? (
+                    <Text>{selectedRegion}</Text>
+                  ) : (
+                    <Text>Search destinations</Text>
+                  )} */}
                 </Tab>
                 <Tab textAlign="left" display="block" w="800px">
                   <Heading fontSize="13px"> Check in</Heading>
@@ -86,6 +123,7 @@ const test = () => {
                           display="block"
                           border="0"
                           role="group"
+                          onClick={() => handleRegionSelect(item.name)}
                         >
                           <Image
                             src={item.img}
@@ -104,7 +142,12 @@ const test = () => {
                 </TabPanel>
 
                 <TabPanel>
-                  <Datepicker value={value} onChange={handleValueChange} />
+                  <Datepicker
+                    isOpen={true}
+                    onClose={false}
+                    value={value}
+                    onChange={(e) => console.log({ e })}
+                  />
                 </TabPanel>
                 <TabPanel>
                   <Datepicker value={value} onChange={handleValueChange} />
@@ -186,11 +229,25 @@ const Quantity = ({ type, description }) => {
         <Text>{description}</Text>
       </VStack>
       <HStack>
-        <Button isRound="full" onClick={incrementQuantity}>
+        <Button
+          w="auto"
+          isRound={true}
+          borderRadius="100%"
+          onClick={incrementQuantity}
+        >
           +
         </Button>
         <Text>{quantity}</Text>
-        <Button isRound="full" onClick={decrementQuantity}>
+        {/* <Button isRound={true} borderRadius="100%" onClick={decrementQuantity}>
+          -
+        </Button> */}
+
+        <Button
+          isRound={true}
+          borderRadius="100%"
+          onClick={decrementQuantity}
+          bg={quantity === 0 ? "gray.300" : undefined}
+        >
           -
         </Button>
       </HStack>
