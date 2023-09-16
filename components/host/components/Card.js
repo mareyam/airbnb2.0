@@ -21,14 +21,17 @@ import TypeWriter from "@/common/TypeWriter";
 
 const Card = () => {
   const [sliderValue, setSliderValue] = useState(1);
-  const [cost, setCost] = useState(30);
+  const [cost, setCost] = useState(25);
 
   const handlePrice = (value) => {
     console.log(value);
     setSliderValue(value);
-    setCost(sliderValue * 30);
+    setCost(sliderValue * 25);
     if (sliderValue == 1) {
-      setCost(30);
+      setCost(25);
+    }
+    if (sliderValue == 30) {
+      setCost(750);
     }
   };
 
@@ -68,7 +71,7 @@ const Card = () => {
               <Box as="span" textDecoration="underline" fontWeight="700">
                 {sliderValue} nights{"   "}
               </Box>
-              at an estimated $30 a night
+              at an estimated $25 a night
             </Text>
           </VStack>
           <Box h="100vh">

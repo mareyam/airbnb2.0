@@ -10,7 +10,7 @@ const BookingCalender = () => {
       </Heading>
       <Text>Add your travel dates for exact pricing</Text>
       <CalenderCard />
-      <Divider my='5'/>
+      <Divider my="5" />
     </Box>
   );
 };

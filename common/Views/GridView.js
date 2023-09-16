@@ -66,15 +66,10 @@ const GridView = () => {
               w="100%"
               data-aos="fade-up"
               data-aos-easing="linear"
-              data-aos-duration="1000"
+              data-aos-delay="300"
+              // data-aos-duration="500"
             />
-            <Flex
-              w="100%"
-              justifyContent="space-between"
-              data-aos="fade-up"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-            >
+            <Flex w="100%" justifyContent="space-between">
               <Box>
                 <Heading fontSize="15px">
                   {item.city}, {item.country}

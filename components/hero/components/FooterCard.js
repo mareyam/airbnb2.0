@@ -19,7 +19,7 @@ const FooterCard = () => {
       textAlign="left"
       data-aos="fade-left"
       data-aos-easing="linear"
-      data-aos-duration="1500"
+      data-aos-duration="400"
     >
       <Heading fontWeight="500" fontSize="20px" color="white">
         The Greatest Outdoors

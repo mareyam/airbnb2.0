@@ -3,9 +3,22 @@ import { Box, Text, IconButton, Image, Button, HStack } from "@chakra-ui/react";
 
 const Filters = () => {
   return (
-    <HStack>
-      <Button margin="5" bg="white" p="6" w="55%" border="1px solid gray">
+    <HStack role="group">
+      <Button
+        _groupHover={{
+          bgColor: "white",
+          transform: "scale(1.1)",
+        }}
+        margin="5"
+        bg="white"
+        p="6"
+        w="55%"
+        border="1px solid gray"
+      >
         <IconButton
+          _groupHover={{
+            bgColor: "white",
+          }}
           bg="white"
           icon={
             <Box>

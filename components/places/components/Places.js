@@ -25,7 +25,7 @@ const Places = () => {
     <Container maxW="container.xl" zIndex="90" mt={{ base: "20%", md: "5%" }}>
       <VStack align="left">
         {/* <ChakraTabs /> */}
-        <HStack w="100%" position="sticky" top="0">
+        <HStack w="100%" position="sticky" top="20" right="0">
           <Box w={{ base: "50%", md: "85%" }} overflow="hidden">
             <AccomadationType />
           </Box>

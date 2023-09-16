@@ -21,10 +21,18 @@ const AccomadationType = () => {
       }}
     >
       {list.map((item) => (
-        <VStack>
-          <Image src={item.image} h="25px" w="25px" />
-          <p>{item.name}</p>
-        </VStack>
+        <Box role="group">
+          <VStack
+            _groupHover={{
+              transform: "scale(1.05)",
+              textDecoration: "underline",
+              fontWeight: "600",
+            }}
+          >
+            <Image src={item.image} h="25px" w="25px" />
+            <p mb="3">{item.name}</p>
+          </VStack>
+        </Box>
       ))}
     </HStack>
   );

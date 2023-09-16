@@ -23,7 +23,7 @@ import {
 import { DragHandleIcon, Search2Icon, SearchIcon } from "@chakra-ui/icons";
 import { BsGlobe } from "react-icons/bs";
 import { useCalender } from "@/context/CalenderContext";
-import Test from "@/test/Test";
+// import { useToggle } from "@/context/ToggleContext";
 
 const Navbar = () => {
   const src = useBreakpointValue({
@@ -31,11 +31,17 @@ const Navbar = () => {
     md: "/airbnblogo.png",
   });
   const [toggleHam, setToggleHam] = useState(false);
-  const { inputData, setInputData } = useCalender();
+  const { inputData, setInputData } = useCalender(false);
+  // const { isToggled, setIsToggled } = useToggle();
 
-  const handleInputChange = (e) => {
-    setInputData(e.target.value);
+  const handleInputChange = () => {
+    setInputData(!inputData);
+    console.log("clicked");
   };
+
+  // const handleToggle = (e) => {
+  //   setIsToggled(!isToggled);
+  // };
 
   return (
     <Container
@@ -59,34 +65,51 @@ const Navbar = () => {
             w={{ base: "30px", md: "130px", lg: "100px" }}
           />
         </Link>
-        <Box
-          className="flex items-center rounded-full"
-          w={{ base: "auto", md: "500px" }}
-        >
-          <Input
-            rounded="full"
-            placeholder="Start your search"
-            onChange={handleInputChange}
-          />
+        <Box role="group">
+          <Box
+            as="Button"
+            className="flex items-center rounded-full"
+            w={{ base: "auto", md: "300px" }}
+            border="2px solid"
+            bgColor="white"
+            textAlign="center"
+            justifyContent="space-between"
+            px="5"
+            onClick={handleInputChange}
+            _groupHover={{
+              transition: "all 0.3s ease-out",
+              transform: "scale(1.03)",
+            }}
+          >
+            <Text
+              bgColor="white"
+              _groupHover={{
+                transition: "all 0.3s ease-out",
+                transform: "scale(1.05)",
+              }}
+            >
+              Start your search
+            </Text>
 
-          {/* <Test /> */}
-          <IconButton
-            className="hidden md:inline-flex bg-red-400 text-white p-2"
-            transition="all 0.3s ease-out"
-            transform={toggleHam ? "rotate(0deg)" : "rotate(90deg)"}
-            fontSize={{ base: "8px", md: "20px" }}
-            rounded="full"
-            bg="gray.200"
-            icon={<Box>{<Search2Icon />}</Box>}
-          ></IconButton>
+            <IconButton
+              className="hidden md:inline-flex bg-red-400 text-white p-2"
+              transition="all 0.3s ease-out"
+              transform={toggleHam ? "rotate(0deg)" : "rotate(90deg)"}
+              fontSize={{ base: "8px", md: "20px" }}
+              rounded="full"
+              bg="white"
+              _groupHover={{ bgColor: "white", transform: "scale(1.02)" }}
+              icon={<Box>{<Search2Icon />}</Box>}
+            ></IconButton>
+          </Box>
         </Box>
 
         <Box display={{ base: "block", md: "none" }}>
           <IconButton
             transition="all 0.3s ease-out"
-            w="50px"
+            w="45px"
             transform={toggleHam ? "rotate(0deg)" : "rotate(90deg)"}
-            fontSize={{ base: "xl", md: "2xl" }}
+            fontSize={{ base: "xl", md: "30px" }}
             icon={
               <Box>
                 <DragHandleIcon />
@@ -116,7 +139,9 @@ const Navbar = () => {
                     Become a host
                   </Button>
                 </Link>
+              </Box>
 
+              <Box role="group">
                 <IconButton
                   className="hidden md:inline-flex bg-red-400 text-white p-2"
                   transition="all 0.3s ease-out"
@@ -125,17 +150,19 @@ const Navbar = () => {
                   fontSize={{ base: "8px", md: "20px" }}
                   rounded="full"
                   bg="gray.200"
+                  _groupHover={{ transform: "scale(1.05)" }}
                   icon={<Box>{<BsGlobe />}</Box>}
                 ></IconButton>
               </Box>
 
-              <Box className="flex items-center rounded-full">
+              <Box className="flex items-center rounded-full" role="group">
                 <Button
                   className="flex items-center rounded-full"
                   borderRadius="full"
                   justifyContent="space-between"
                   flexDirection="row"
                   display="flex"
+                  _groupHover={{ transform: "scale(1.05)" }}
                 >
                   <IconButton
                     w="auto"

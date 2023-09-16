@@ -37,16 +37,19 @@
 import React, { Component } from "react";
 
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { Center } from "@chakra-ui/react";
 
 const Example = () => {
   return (
     <TransformWrapper>
       <TransformComponent>
-        <img
-          src="/map1.png"
-          alt="test"
-          style={{ width: "100%", height: "100vh" }}
-        />
+        <Center>
+          <img
+            src="/large1.jpg"
+            alt="test"
+            style={{ width: "100%", height: "85vh" }}
+          />
+        </Center>
       </TransformComponent>
     </TransformWrapper>
   );

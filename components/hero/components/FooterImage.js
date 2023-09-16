@@ -11,7 +11,7 @@ const FooterImage = () => {
         w="100%"
         data-aos="fade-left"
         data-aos-easing="linear"
-        data-aos-duration="1500"
+        data-aos-duration="400"
       />
       <Box m="5" top="0" position="absolute" w="200px" h="150px">
         <FooterCard />

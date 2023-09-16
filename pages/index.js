@@ -14,7 +14,8 @@ import LiveAnywhere from "@/components/places/components/LiveAnywhere";
 import FooterImage from "@/components/hero/components/FooterImage";
 import CalenderCard from "@/components/calender/components/CalenderCard";
 import { CalenderProvider } from "@/context/CalenderContext";
-
+import CalenderCardd from "@/components/calender/components/CalenderCardd";
+import { ToggleProvider } from "@/context/ToggleContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,13 +34,16 @@ export default function Home() {
 
   return (
     <CalenderProvider>
+      {/* <ToggleProvider> */}
       <Layout>
+        <CalenderCardd />
         <CalenderCard />
         <HeroImage />
         <Explore />
         <LiveAnywhere />
         <FooterImage />
       </Layout>
+      {/* </ToggleProvider> */}
     </CalenderProvider>
   );
 }
