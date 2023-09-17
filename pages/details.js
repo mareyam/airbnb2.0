@@ -20,8 +20,8 @@ const details = () => {
           <DetailsImages />
           <DetailsInformation />
           <Offers />
-          <BookingCalender />
-          <CalenderCard />
+          {/* <BookingCalender /> */}
+          {/* <CalenderCard /> */}
 
           <Reviews />
         </Container>

@@ -3,14 +3,25 @@ import {
   HStack,
   VStack,
   Heading,
+  Center,
   Text,
   Button,
   Input,
   Image,
+  Modal,
+  useDisclosure,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import React from "react";
 
 const ReserveSmallCard = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       <Box border="1px solid gray" p="5" borderRadius="15px">
@@ -44,9 +55,42 @@ const ReserveSmallCard = () => {
             />
           </HStack>
           <Input fontSize={{ base: "12px", md: "15px" }} placeholder="guests" />
-          <Button mt="3" w="100%" bgColor="pink.500" color="white">
+          <Button
+            onClick={onOpen}
+            mt="3"
+            w="100%"
+            bgColor="pink.500"
+            color="white"
+          >
             Reserve
           </Button>
+
+          <Modal isOpen={isOpen} onClose={onClose} h="300px">
+            <ModalOverlay />
+            <ModalContent h="500px">
+              <ModalHeader>Holiday dates</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody h="300px" overflowY="scroll">
+                <Box display="block">
+                  <Center
+                    display="block"
+                    align="center"
+                    justifyContent="center"
+                  >
+                    <Text> you will be charged for $661</Text>
+                    <Text> Selected Dates: 16 Sep 23 - 23 Sep 23</Text>
+                  </Center>
+                </Box>
+              </ModalBody>
+
+              <ModalFooter>
+                <Button colorScheme="blue" mr={3} onClick={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
+
           <Text>you won't be charged yet</Text>
         </VStack>
       </Box>

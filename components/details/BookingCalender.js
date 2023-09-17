@@ -9,8 +9,8 @@ const BookingCalender = () => {
         Select check-in date
       </Heading>
       <Text>Add your travel dates for exact pricing</Text>
-      <CalenderCard />
-      <Divider my="5" />
+      {/* <CalenderCard /> */}
+      {/* <Divider my="5" /> */}
     </Box>
   );
 };
