@@ -20,8 +20,10 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRangePicker } from "react-date-range";
 import { useCalender } from "@/context/CalenderContext";
+import getHelper from "@/lib/getHelper";
 
 const CalenderCard = () => {
+  console.log(getHelper());
   const { inputData } = useCalender();
   const [guestCount, setGuestCount] = useState(1);
   const [startDate, setStartDate] = useState(new Date());
