@@ -82,7 +82,7 @@ const Explore = () => {
         // data-aos-duration="300"
       >
         <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="5">
-          {data?.map((item, index) => (
+          {data?.slice(0, 8).map((item, index) => (
             <Box role="group">
               <HStack
                 // data-aos-delay={index * delay}

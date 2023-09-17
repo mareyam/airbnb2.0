@@ -32,10 +32,7 @@ import { useCalender } from "@/context/CalenderContext";
 
 const CalenderCard = () => {
   const { inputData } = useCalender();
-  // const { isToggled } = useToggle();
-
-  console.log("in is" + inputData);
-  // console.log("toggle is" + isToggled);
+  console.log("input data in CC" + inputData);
 
   const { isOpen, onToggle, onClose } = useDisclosure();
   const [value, setValue] = useState({
@@ -56,15 +53,19 @@ const CalenderCard = () => {
 
   return (
     <Box
-      w="100vw"
-      h="100vh"
-      align="center"
-      placement="center"
-      justifyContent="center"
+      mt="100px"
+      // w="100vw"
+      // h="100vh"
+      w="20vw"
+      h="20vh"
+      // align="center"
+      // placement="center"
+      // justifyContent="center"
+      border="2px solid green"
     >
       {/* <Button onClick={onToggle}>Trigger</Button> */}
       {/* {isToggled && <Text>hello</Text>} */}
-      {inputData && <Text>hello</Text>}
+      {/* {inputData && <Text>helloppp</Text>} */}
 
       {inputData && (
         <Popover
@@ -78,6 +79,9 @@ const CalenderCard = () => {
           placement="center"
           justifyContent="center"
         >
+          <PopoverTrigger>
+            <Button>Trigger</Button>
+          </PopoverTrigger>
           <PopoverContent
             border="none"
             w={{ base: "100%", md: "700px" }}

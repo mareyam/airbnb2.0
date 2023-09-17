@@ -36,7 +36,7 @@ export default function Home() {
     <CalenderProvider>
       {/* <ToggleProvider> */}
       <Layout>
-        <CalenderCardd />
+        {/* <CalenderCardd /> */}
         <CalenderCard />
         <HeroImage />
         <Explore />

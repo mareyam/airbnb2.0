@@ -7,7 +7,6 @@ const Layout = ({ children }) => {
   return (
     // <Box minW="container.2xl">
     <Box>
-
       <Navbar />
       {children}
       <Footer />
