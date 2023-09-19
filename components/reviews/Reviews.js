@@ -80,6 +80,8 @@ const Reviews = () => {
                           src={item.image}
                           w="50px"
                           h="50px"
+                          objectFit="cover"
+                          objectPosition="center"
                         />
                         <VStack spacing="0" align="left">
                           <Text fontWeight="500">{item.name}</Text>
@@ -118,60 +120,83 @@ export default Reviews;
 
 const reviewList = [
   {
-    image: "/img1.png",
-    name: "Raven",
-    date: "August 2023",
-    review: "Best vacations",
-  },
-  {
-    image: "/img1.png",
-    name: "Billy",
-    date: "August 2023",
-    review: "Amazing vacations",
-  },
-  {
-    image: "/img1.png",
-    name: "Raven",
-    date: "August 2023",
+    name: "John Doe",
+    date: "2023-09-13",
+    image: "/p1.jpg",
     review:
-      "The place was nice However, StayVista team tried to pull a fast one on us. While booking it was never mentioned that outside food would be",
+      "Our stay at the Cozy Apartment was delightful! The location was perfect, and the apartment was well-equipped and clean. We had a wonderful time exploring the city.",
+    positive: true,
   },
   {
-    image: "/img1.png",
-    name: "Raven",
-    date: "August 2023",
-    review: "Best vacations",
-  },
-  {
-    image: "/img1.png",
-    name: "Billy",
-    date: "August 2023",
-    review: "Amazing vacations",
-  },
-  {
-    image: "/img1.png",
-    name: "Raven",
-    date: "August 2023",
+    name: "Jane Smith",
+    date: "2023-09-14",
+    image: "/p2.jpg",
     review:
-      "The place was nice However, StayVista team tried to pull a fast one on us. While booking it was never mentioned that outside food would be",
+      "The Seaside Villa in Toronto exceeded our expectations. The ocean views were breathtaking, and the villa was spacious and luxurious. A perfect getaway!",
+    positive: true,
   },
   {
-    image: "/img1.png",
-    name: "Raven",
-    date: "August 2023",
-    review: "Best vacations",
-  },
-  {
-    image: "/img1.png",
-    name: "Billy",
-    date: "August 2023",
-    review: "Amazing vacations",
-  },
-  {
-    image: "/img1.png",
-    name: "Raven",
-    date: "August 2023",
+    name: "David Johnson",
+    date: "2023-09-15",
+    image: "/p3.jpg",
     review:
-      "The place was nice However, StayVista team tried to pull a fast one on us. While booking it was never mentioned that outside food would be",
+      "Our stay at the Rustic Cabin in Torino was a unique experience. Surrounded by nature, it was peaceful and charming. Ideal for a romantic escape.",
+    positive: true,
+  },
+  {
+    name: "Emily Wilson",
+    date: "2023-09-16",
+    image: "/p4.jpg",
+    review:
+      "The cute Apartment in Lyon was cozy and beautifully decorated. Its central location made it convenient for exploring the city.",
+    positive: true,
+  },
+  {
+    name: "Michael Brown",
+    date: "2023-09-17",
+    image: "/p5.avif",
+    review:
+      "Our stay at the Seaside Castle in Milan was a dream come true. The ocean views were mesmerizing, and the amenities were top-notch. Highly recommended!",
+    positive: true,
+  },
+  {
+    name: "Sarah Davis",
+    date: "2023-09-18",
+    image: "/p6.jpg",
+    review:
+      "Our stay at the Cozy Apartment in Paulo was disappointing. The apartment was not as stylish as advertised, and the city noise was unbearable.",
+    positive: false,
+  },
+  {
+    name: "Robert Lee",
+    date: "2023-09-19",
+    image: "/p1.jpg",
+    review:
+      "The Seaside Villa in Toronto was a letdown. The property was not well-maintained, and we encountered several issues during our stay.",
+    positive: false,
+  },
+  {
+    name: "Sophia White",
+    date: "2023-09-20",
+    image: "/p2.jpg",
+    review:
+      "The Rustic Cabin in Torino lacked basic amenities like Wi-Fi, making it inconvenient for travelers who need to stay connected.",
+    positive: false,
+  },
+  {
+    name: "William Taylor",
+    date: "2023-09-21",
+    image: "/p3.jpg",
+    review:
+      "The cute Apartment in Lyon was not as clean as expected. We found some issues with cleanliness and maintenance.",
+    positive: false,
+  },
+  {
+    name: "Olivia Hall",
+    date: "2023-09-22",
+    image: "/p4.jpg",
+    review:
+      "The Seaside Castle in Milan was overpriced for what it offered. While the views were stunning, the overall experience did not justify the cost.",
+    positive: false,
   },
 ];

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { use } from "react";
 import getPost from "@/lib/getHelper";
 import {
   Box,
@@ -9,8 +9,78 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+import fetcher from "@/lib/fetcher";
+import { useRouter } from "next/router";
 
-const Page = ({
+import DetailsImages from "@/components/details/DetailsImages";
+import DetailsHeader from "@/components/details/DetailsHeader";
+import DetailsInformation from "@/components/details/DetailsInformation";
+import Layout from "@/components/layout/Layout";
+import { CalenderProvider } from "@/context/CalenderContext";
+import Offers from "@/components/details/Offers";
+import BookingCalender from "@/components/details/BookingCalender";
+import Reviews from "@/components/reviews/Reviews";
+import CalenderCard from "@/components/calender/components/CalenderCard";
+import { SWRConfig } from "swr";
+
+export default function Page({ fallback }) {
+  const router = useRouter();
+  const { postId } = router.query;
+  const { data, isLoading, isError } = fetcher(`api/posts/${postId}`);
+  if (isLoading) return <div>loading</div>;
+  if (isError) return <div>error</div>;
+  const {
+    city,
+    country,
+    id,
+    title,
+    description,
+    location,
+    price_per_night,
+    number_of_bedrooms,
+    number_of_bathrooms,
+    max_guests,
+    amenities,
+    image,
+    host,
+    career,
+    stars,
+    reviews,
+    cost,
+  } = data;
+  console.log(data.amenities);
+
+  return (
+    <SWRConfig value={{ fallback }}>
+      <CalenderProvider>
+        <Layout>
+          <Container maxW="container.xl">
+            <DetailsHeader
+              title={title}
+              stars={stars}
+              reviews={reviews}
+              location={location}
+              career={career}
+              amenities={amenities}
+            />
+            <DetailsImages image={image} />
+            <DetailsInformation
+              cost={cost}
+              reviews={reviews}
+              stars={stars}
+              description={description}
+              amenities={amenities}
+            />
+            <Offers />
+            <Reviews />
+          </Container>
+        </Layout>
+      </CalenderProvider>
+    </SWRConfig>
+  );
+}
+
+const Article = ({
   city,
   country,
   id,
@@ -33,7 +103,7 @@ const Page = ({
         fontWeight="600"
         textAlign={{ base: "center", md: "left" }}
       >
-        {title}
+        {id} {title}
       </Heading>
       <SimpleGrid
         textAlign={{ base: "center", md: "left" }}
@@ -51,21 +121,17 @@ const Page = ({
         <Text fontWeight="700">· Abiansemal, Bali, Indonesia </Text>
       </SimpleGrid>
     </Box>
-
-    // <div>
-    //   <Text>text is {id}</Text>
-    //   <Text>text is {title}</Text>
-    //   all the detail page
-    // </div>
   );
 };
-
-export default Page;
 
 export async function getStaticProps({ params }) {
   const posts = await getPost(params.postId);
   return {
-    props: posts,
+    props: {
+      fallback: {
+        "api/posts": posts,
+      },
+    },
   };
 }
 

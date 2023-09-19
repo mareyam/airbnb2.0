@@ -21,6 +21,7 @@ import GridView from "@/common/Views/GridView";
 import Filters from "@/common/Filters";
 
 const Places = () => {
+  // console.log(title);
   return (
     <Container maxW="container.xl" zIndex="90" mt={{ base: "20%", md: "5%" }}>
       <VStack align="left">
@@ -67,7 +68,7 @@ const Places = () => {
           </Center>
         </VStack>
       </VStack>
-      <GridView />
+      <GridView/>
     </Container>
   );
 };

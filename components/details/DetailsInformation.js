@@ -15,7 +15,13 @@ import {
 } from "@chakra-ui/react";
 import ReserveSmallCard from "../reserve/ReserveSmallCard";
 
-const DetailsInformation = () => {
+const DetailsInformation = ({
+  cost,
+  reviews,
+  stars,
+  description,
+  amenities,
+}) => {
   const [scrollTop, setScrollTop] = useState(0);
   const fixedHeight = 200;
 
@@ -46,11 +52,15 @@ const DetailsInformation = () => {
     >
       <Box w={{ base: "100%", md: "60%" }}>
         <HStack w="100%" justify="space-between">
-          <VStack align="left">
+          <VStack w="80%" align="left">
             <Heading fontWeight="500" fontSize="25px">
-              Entire villa hosted by Wayan
+              {description}
             </Heading>
-            <Text fontSize="18px">4 guests 2 bedrooms 2 beds 2 baths</Text>
+            <Text fontSize="14px">
+              {amenities?.map((item, index) => (
+                <span key={index}> {item}</span>
+              ))}
+            </Text>
           </VStack>
           <Image src="/cabin.jpg" rounded="full" h="65px" w="65px" />
         </HStack>
@@ -120,7 +130,7 @@ const DetailsInformation = () => {
         right="10"
         bottom="3"
       >
-        <ReserveSmallCard />
+        <ReserveSmallCard cost={cost} reviews={reviews} stars={stars} />
       </Box>
     </HStack>
   );

@@ -17,10 +17,20 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 
-const ReserveSmallCard = () => {
+const ReserveSmallCard = ({ cost, reviews, stars }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [checkInDate, setCheckInDate] = useState("");
+  const [checkOutDate, setCheckOutDate] = useState("");
+
+  const handleCheckInChange = (e) => {
+    setCheckInDate(e.target.value);
+  };
+
+  const handleCheckOutChange = (e) => {
+    setCheckOutDate(e.target.value);
+  };
 
   return (
     <>
@@ -29,14 +39,14 @@ const ReserveSmallCard = () => {
           <HStack justifyContent="space-between" w="100%">
             <VStack align="left">
               <Heading fontSize="25px" fontWeight="500">
-                $661
+                ${cost}
               </Heading>
               <Text>Total before taxes</Text>
             </VStack>
             <HStack display={{ base: "block", lg: "flex" }}>
-              <Text fontWeight="700">4.92</Text>
+              <Text fontWeight="700">{stars}</Text>
               <Text textDecoration="underline" color="gray.600">
-                409 reviews
+                {reviews} reviews
               </Text>
             </HStack>
           </HStack>
@@ -46,12 +56,16 @@ const ReserveSmallCard = () => {
               size="md"
               type="datetime-local"
               fontSize={{ base: "11px", md: "15px" }}
+              value={checkInDate}
+              onChange={handleCheckInChange}
             />
             <Input
               placeholder="Checkout"
               size="md"
               type="datetime-local"
               fontSize={{ base: "11px", md: "15px" }}
+              value={checkOutDate}
+              onChange={handleCheckOutChange}
             />
           </HStack>
           <Input fontSize={{ base: "12px", md: "15px" }} placeholder="guests" />
@@ -77,8 +91,11 @@ const ReserveSmallCard = () => {
                     align="center"
                     justifyContent="center"
                   >
-                    <Text> you will be charged for $661</Text>
-                    <Text> Selected Dates: 16 Sep 23 - 23 Sep 23</Text>
+                    <Text> you will be charged for ${cost}</Text>
+                    <Text>
+                      {" "}
+                      Selected Dates: {checkInDate}- {checkOutDate}
+                    </Text>
                   </Center>
                 </Box>
               </ModalBody>

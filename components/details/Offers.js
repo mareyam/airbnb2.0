@@ -82,83 +82,83 @@ export default Offers;
 
 const offerList = [
   {
-    image: "/cabin.jpg",
-    name: "Mountain view",
+    image: "/crib.png",
+    name: "Crib",
   },
   {
-    image: "/calender.png",
-    name: "Mountain view",
+    image: "/cutlery.png",
+    name: "Cutlery",
   },
   {
-    image: "/castle.png",
-    name: "Mountain view",
+    image: "/desk.png",
+    name: "Desk",
   },
   {
-    image: "/cave.png",
-    name: "Mountain view",
+    image: "/parking-area.png",
+    name: "Parking area",
   },
   {
-    image: "/filter.png",
-    name: "Mountain view",
+    image: "/privacy.png",
+    name: "Privacy",
   },
   {
-    image: "/home.png",
-    name: "Mountain view",
+    image: "/crib.png",
+    name: "Crib",
   },
   {
-    image: "/hotel.png",
-    name: "Mountain view",
+    image: "/cutlery.png",
+    name: "Cutlery",
   },
   {
-    image: "/house.png",
-    name: "Mountain view",
+    image: "/desk.png",
+    name: "Desk",
   },
   {
-    image: "/iglu.jpg",
-    name: "Mountain view",
+    image: "/parking-area.png",
+    name: "Parking are",
   },
   {
-    image: "/sketch.png",
-    name: "Mountain view",
+    image: "/privacy.png",
+    name: "Privacy",
   },
   {
-    image: "/cabin.jpg",
-    name: "Mountain view",
+    image: "/crib.png",
+    name: "Crib",
   },
   {
-    image: "/calender.png",
-    name: "Mountain view",
+    image: "/cutlery.png",
+    name: "Cutlery",
   },
   {
-    image: "/castle.png",
-    name: "Mountain view",
+    image: "/desk.png",
+    name: "Desk",
   },
   {
-    image: "/cave.png",
-    name: "Mountain view",
+    image: "/parking-area.png",
+    name: "Parking area",
   },
   {
-    image: "/filter.png",
-    name: "Mountain view",
+    image: "/privacy.png",
+    name: "Privacy",
   },
   {
-    image: "/home.png",
-    name: "Mountain view",
+    image: "/crib.png",
+    name: "Crib",
   },
   {
-    image: "/hotel.png",
-    name: "Mountain view",
+    image: "/cutlery.png",
+    name: "Cutlery",
   },
   {
-    image: "/house.png",
-    name: "Mountain view",
+    image: "/desk.png",
+    name: "Desk",
   },
   {
-    image: "/iglu.jpg",
-    name: "Mountain view",
+    image: "/parking-area.png",
+    name: "Parking are",
   },
   {
-    image: "/sketch.png",
-    name: "Mountain view",
+    image: "/privacy.png",
+    name: "Privacy",
   },
 ];

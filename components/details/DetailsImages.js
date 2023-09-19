@@ -1,20 +1,21 @@
 import { Box, Image, SimpleGrid } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 
-const DetailsImages = () => {
+const DetailsImages = ({ image }) => {
   const ref = useRef(null);
   const [height, setHeight] = useState(0);
 
   useEffect(() => setHeight(ref.current.clientHeight), [ref.current]);
-
+  console.log("heighy are");
+  console.log(height);
   return (
     <Box marginTop="4">
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
         <Box>
           <Image
-            src={images[0].src}
+            src={image[0]}
             w="full"
-            h={height}
+            h="460px"
             objectFit="cover"
             objectPosition="center"
           />
@@ -22,9 +23,9 @@ const DetailsImages = () => {
 
         <Box>
           <SimpleGrid columns={2} spacing={2} ref={ref}>
-            {images.slice(1, 5).map((item, index) => (
+            {image?.slice(1, 5)?.map((item, index) => (
               <Box key={index}>
-                <Image src={item.src} width="full" />
+                <Image src={item} width="full" h="225px" />
               </Box>
             ))}
           </SimpleGrid>
@@ -36,29 +37,29 @@ const DetailsImages = () => {
 
 export default DetailsImages;
 
-const images = [
-  {
-    src: "/pic1.webp",
-  },
-  {
-    src: "/pic2.webp",
-  },
-  {
-    src: "/pic3.webp",
-  },
-  {
-    src: "/pic4.webp",
-  },
-  {
-    src: "/pic5.webp",
-  },
-  {
-    src: "/pic6.webp",
-  },
-  {
-    src: "/pic3.webp",
-  },
-  {
-    src: "/pic4.webp",
-  },
-];
+// const images = [
+//   {
+//     src: "/pic1.webp",
+//   },
+//   {
+//     src: "/pic2.webp",
+//   },
+//   {
+//     src: "/pic3.webp",
+//   },
+//   {
+//     src: "/pic4.webp",
+//   },
+//   {
+//     src: "/pic5.webp",
+//   },
+//   {
+//     src: "/pic6.webp",
+//   },
+//   {
+//     src: "/pic3.webp",
+//   },
+//   {
+//     src: "/pic4.webp",
+//   },
+// ];

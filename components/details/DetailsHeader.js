@@ -9,7 +9,8 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const details = () => {
+const details = ({ title, stars, reviews, career, location }) => {
+
   return (
     <Box mt="10%">
       <Heading
@@ -17,7 +18,7 @@ const details = () => {
         fontWeight="600"
         textAlign={{ base: "center", md: "left" }}
       >
-        Aura House 2bds Eco Bamboo House, Pool, River View
+        {title}
       </Heading>
       <SimpleGrid
         textAlign={{ base: "center", md: "left" }}
@@ -28,11 +29,12 @@ const details = () => {
       >
         <Box display="flex" justifyContent={{ base: "center", md: "left" }}>
           <Text>&#9733;</Text>
-          <Text>4.87</Text>
+          <Text>{stars}</Text>
         </Box>
-        <Text>· 238 reviews </Text>
-        <Text>· Superhost </Text>
-        <Text fontWeight="700">· Abiansemal, Bali, Indonesia </Text>
+        <Text>· {reviews} reviews</Text>
+        <Text>· {career} </Text>
+        <Text fontWeight="700">· {location}</Text>
+       
       </SimpleGrid>
     </Box>
   );

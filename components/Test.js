@@ -47,7 +47,7 @@ function Post({ data }) {
         fontWeight="600"
         textAlign={{ base: "center", md: "left" }}
       >
-        Aura House 2bds Eco Bamboo House, Pool, River View
+        {id} {title}
       </Heading>
       <SimpleGrid
         textAlign={{ base: "center", md: "left" }}

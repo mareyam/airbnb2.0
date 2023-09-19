@@ -7,6 +7,7 @@ import {
   HStack,
   Image,
   VStack,
+  Link,
   Text,
   Heading,
 } from "@chakra-ui/react";
@@ -84,27 +85,29 @@ const Explore = () => {
         <SimpleGrid my="2" columns={{ base: 1, md: 4 }} spacing="5">
           {data?.slice(0, 8).map((item, index) => (
             <Box role="group">
-              <HStack
-                // data-aos-delay={index * delay}
-                key={item.id}
-                _groupHover={{ transform: "scale(1.05)" }}
-                transition="all 0.5s ease"
-              >
-                <Image
-                  borderRadius="10%"
-                  src={item.image}
-                  h="100px"
-                  w="100px"
-                />
-                <VStack textAlign="left" align="left">
-                  <Text fontWeight="700" fontSize="12px">
-                    {item.title}
-                  </Text>
-                  <Text color="gray.600" fontSize="12px">
-                    {item.location}
-                  </Text>
-                </VStack>
-              </HStack>
+              <Link href={`/posts/`}>
+                <HStack
+                  // data-aos-delay={index * delay}
+                  key={item.id}
+                  _groupHover={{ transform: "scale(1.05)" }}
+                  transition="all 0.5s ease"
+                >
+                  <Image
+                    borderRadius="10%"
+                    src={item.image}
+                    h="100px"
+                    w="100px"
+                  />
+                  <VStack textAlign="left" align="left">
+                    <Text fontWeight="700" fontSize="12px">
+                      {item.title}
+                    </Text>
+                    <Text color="gray.600" fontSize="12px">
+                      {item.location}
+                    </Text>
+                  </VStack>
+                </HStack>
+              </Link>
             </Box>
           ))}
         </SimpleGrid>
