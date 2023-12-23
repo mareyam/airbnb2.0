@@ -1,9 +1,12 @@
 #AirBnb UI Clone
 
-![Uploading WhatsApp Image 2023-10-14 at 5.22.24 PM.jpeg…]()
-![Uploading WhatsApp Image 2023-10-14 at 5.22.24 PM (1).jpeg…]()
-![Uploading WhatsApp Image 2023-10-14 at 5.22.24 PM (2).jpeg…]()
-![Uploading WhatsApp Image 2023-10-14 at 5.22.24 PM (3).jpeg…]()
+
+![WhatsApp Image 2023-10-14 at 5 22 24 PM](https://github.com/mareyam/airbnb2.0/assets/63284481/67e5bd82-e2f0-4df7-96c6-2d0cc4ea8992)
+![WhatsApp Image 2023-10-14 at 5 22 24 PM (1)](https://github.com/mareyam/airbnb2.0/assets/63284481/a214224a-a10a-43c2-8e68-6a6735a31f5c)
+![WhatsApp Image 2023-10-14 at 5 22 24 PM (2)](https://github.com/mareyam/airbnb2.0/assets/63284481/f24a34c0-251c-4375-9477-e7edc09f5edb)
+![WhatsApp Image 2023-10-14 at 5 22 24 PM (3)](https://github.com/mareyam/airbnb2.0/assets/63284481/c851d54a-c140-4a5a-b622-44c659719f8d)
+![WhatsApp Image 2023-10-14 at 5 22 24 PM (4)](https://github.com/mareyam/airbnb2.0/assets/63284481/98f12f14-dcb6-4eca-9f7a-5d9ffeca834c)
+
 
 
 
